@@ -1,0 +1,154 @@
+<!-- Wazuh 4.12.0. -->
+<group name="active_directory,windows,">
+  
+  <!-- Granular user rules -->
+ 
+  <rule id="110001" level="6">
+    <if_sid>60109</if_sid>
+    <field name="win.system.eventID">^4720</field>
+    <description>A user account "$(win.eventdata.targetUserName)" has been created by "$(win.eventdata.subjectUserName)" - Event ID 4720</description>
+    <group>user_account_management,pci_dss_8.1.2,pci_dss_8.1.6,gpg13_7.5,gdpr_IV_35.7.d,hipaa_164.312.a.1,nist_800_53_AC.2,nist_800_53_AC.7,tsc_CC6.1,tsc_CC6.8</group>
+    <mitre>
+        <id>T1136</id> <!-- Create Account -->
+    </mitre>
+  </rule>
+  
+  <rule id="110002" level="6">
+    <if_sid>60109</if_sid>
+    <field name="win.system.eventID">^4722</field>
+    <description>A user account "$(win.eventdata.targetUserName)" has been enabled by "$(win.eventdata.subjectUserName)" - Event ID 4722</description>
+    <group>user_account_management, pci_dss_8.1.4,pci_dss_8.1.6,gpg13_7.5,gdpr_IV_35.7.d,hipaa_164.312.a.1,nist_800_53_AC.2,nist_800_53_AC.7,tsc_CC6.1,tsc_CC6.8</group>
+    <mitre>
+        <id>T1098</id> <!-- Account Manipulation -->
+    </mitre>
+  </rule>
+  
+  <rule id="110003" level="8">
+    <if_sid>60111</if_sid>
+    <field name="win.system.eventID">^4726</field>
+    <description>User account "$(win.eventdata.targetUserName)" has been deleted by "$(win.eventdata.subjectUserName)" - Event ID 4726</description>
+    <group>user_account_management,pci_dss_8.1.4,pci_dss_8.1.6,gpg13_7.5,gdpr_IV_35.7.d,hipaa_164.312.a.1,nist_800_53_AC.2,nist_800_53_AC.7,tsc_CC6.1,tsc_CC6.8</group>
+    <mitre>
+        <id>T1531</id> <!-- Account Access Removal -->
+    </mitre>
+  </rule>
+
+  <rule id="110004" level="6">
+    <if_sid>60111</if_sid>
+    <field name="win.system.eventID">^4725</field>
+    <description>User account "$(win.eventdata.targetUserName)" has been disabled by "$(win.eventdata.subjectUserName)" - Event ID 4725</description>
+    <group>user_account_management,pci_dss_8.1.4,pci_dss_8.1.6,gpg13_7.5,gdpr_IV_35.7.d,hipaa_164.312.a.1,nist_800_53_AC.2,nist_800_53_AC.7,tsc_CC6.1,tsc_CC6.8</group>
+    <mitre>
+        <id>T1531</id> <!-- Account Access Removal -->
+    </mitre>
+  </rule>
+  
+  <rule id="110005" level="6">
+    <if_sid>60103</if_sid>
+    <field name="win.system.eventID">^4723</field>
+    <description>User "$(win.eventdata.targetUserName)"'s password was changed by himself - Event ID 4723</description>
+    <group>credential_access,pci_dss_8.2.4,pci_dss_8.2.5,gpg13_7.5,gdpr_IV_35.7.d,hipaa_164.312.a.2,nist_800_53_AC.2,nist_800_53_IA.5,tsc_CC6.1,tsc_CC6.8</group>
+    <mitre>
+        <id>T1110</id> <!-- Brute Force -->
+    </mitre>
+    <mitre>
+        <id>T1098</id> <!-- Account Manipulation -->
+    </mitre>
+  </rule>
+  
+  <rule id="110006" level="6">
+    <if_sid>60103</if_sid>
+    <field name="win.system.eventID">^4724</field>
+    <description>User "$(win.eventdata.targetUserName)"'s password was reset by "$(win.eventdata.subjectUserName)" - Event ID 4723</description>
+    <group>credential_access, pci_dss_8.2.4, pci_dss_8.2.5, gpg13_7.5, gdpr_IV_35.7.d, hipaa_164.312.a.2, nist_800_53_AC.2, nist_800_53_IA.5, tsc_CC6.1, tsc_CC6.8</group>
+    <mitre>
+        <id>T1098</id> <!-- Account Manipulation -->
+    </mitre>
+  </rule>
+  
+  <rule id="110007" level="6">
+    <if_sid>60110</if_sid>
+    <field name="win.system.eventID">^4738</field>
+    <description>A user account "$(win.eventdata.targetUserName)" has been modified by "$(win.eventdata.subjectUserName)" - Event ID 4738</description>
+    <group>user_account_management, pci_dss_8.1.4, pci_dss_8.1.6, gpg13_7.5, gdpr_IV_35.7.d, hipaa_164.312.a.1, nist_800_53_AC.2, nist_800_53_AC.7, tsc_CC6.1, tsc_CC6.8</group>
+    <mitre>
+        <id>T1098</id> <!-- Account Manipulation -->
+    </mitre>
+  </rule>
+  
+  <rule id="110008" level="6">
+    <if_sid>60133</if_sid>
+    <field name="win.system.eventID">^4767</field>
+    <description>User account "$(win.eventdata.targetUserName)" unlocked by "$(win.eventdata.subjectUserName)" - Event ID 4767</description>
+    <group>user_account_management, pci_dss_8.1.4, pci_dss_8.1.6, gpg13_7.5, gdpr_IV_35.7.d, hipaa_164.312.a.1, nist_800_53_AC.2, nist_800_53_AC.7, tsc_CC6.1, tsc_CC6.8</group>
+    <mitre>
+        <id>T1098</id> <!-- Account Manipulation -->
+    </mitre>
+  </rule>
+  
+  <rule id="110009" level="6">
+    <if_sid>60115</if_sid>
+    <field name="win.system.eventID">^4740</field>
+    <description>User account "$(win.eventdata.targetUserName)" locked out (multiple login errors) - Event ID 4740</description>
+    <group>authentication_failures,pci_dss_8.1.6,pci_dss_11.4,gpg13_7.5,gdpr_IV_35.7.d,hipaa_164.312.a.1,nist_800_53_AC.7,nist_800_53_SI.4,tsc_CC6.1,tsc_CC6.8,tsc_CC7.2,tsc_CC7.3,</group>
+    <mitre>
+      <id>T1110</id>
+    </mitre>
+    <mitre>
+      <id>T1531</id>
+    </mitre>
+  </rule>
+  
+  <!-- Granular group rules -->
+    
+  <rule id="110010" level="6">
+    <if_sid>60138,60140,60143,60149</if_sid>
+    <field name="win.system.eventID">^631$|^4727$|^4731$|^4754$</field> <!-- Group Created -->
+    <description>Group "$(win.eventdata.TargetUserName)" was created by $(win.eventdata.SubjectUserName) - Event ID - $(win.system.eventID)</description>
+    <group>group_created,win_group_created,pci_dss_8.1.2,pci_dss_10.2.5,gpg13_7.10,gdpr_IV_35.7.d,gdpr_IV_32.2,hipaa_164.312.a.2.I,hipaa_164.312.a.2.II,hipaa_164.312.b,nist_800_53_AC.2,nist_800_53_IA.4,nist_800_53_AU.14,nist_800_53_AC.7,tsc_CC6.8,tsc_CC7.2,tsc_CC7.3,</group>
+    <mitre>
+      <id>T1484</id> <!-- Execution Guardrails -->
+    </mitre>
+  </rule>
+  
+  <rule id="110011" level="8">
+    <if_sid>60139,60146,60153</if_sid>
+    <field name="win.system.eventID">^638$|^662$|^4734$|^4758$</field> <!-- Group Deleted -->
+    <description>Group Deleted per $(win.eventdata.SubjectUserName) - Event ID - $(win.system.eventID)</description>
+    <group>group_deleted,win_group_deleted,pci_dss_8.1.2,pci_dss_10.2.5,gpg13_7.10,gdpr_IV_35.7.d,gdpr_IV_32.2,hipaa_164.312.a.2.I,hipaa_164.312.a.2.II,hipaa_164.312.b,nist_800_53_AC.2,nist_800_53_IA.4,nist_800_53_AU.14,nist_800_53_AC.7,tsc_CC6.8,tsc_CC7.2,tsc_CC7.3,</group>
+    <mitre>
+      <id>T1484</id> <!-- Execution Guardrails -->
+    </mitre>
+  </rule>
+
+  <rule id="110012" level="6">
+    <if_sid>60113,60141,60144,60151</if_sid>
+    <field name="win.system.eventID">^632$|^4728$|^660$|^4756$|^636$|^4732$</field> <!-- Member Added -->
+    <description>User "$(win.eventdata.MemberName)" added to group "$(win.eventdata.TargetUserName)" by "$(win.eventdata.SubjectUserName)" - Event ID - $(win.system.eventID)</description>
+    <group>group_changed,win_group_changed,pci_dss_8.1.2,pci_dss_10.2.5,gpg13_7.10,gdpr_IV_35.7.d,gdpr_IV_32.2,hipaa_164.312.a.2.I,hipaa_164.312.a.2.II,hipaa_164.312.b,nist_800_53_AC.2,nist_800_53_IA.4,nist_800_53_AU.14,nist_800_53_AC.7,tsc_CC6.8,tsc_CC7.2,tsc_CC7.3,</group>
+    <mitre>
+      <id>T1484</id> <!-- Execution Guardrails -->
+    </mitre>
+  </rule>
+
+  <rule id="110013" level="6">
+    <if_sid>60113,60142,60152,60145</if_sid>
+    <field name="win.system.eventID">^633$|^4729$|^637$|^4733$|^661$|^4757$</field> <!-- Member Remmoved -->
+    <description>User "$(win.eventdata.MemberName)" was removed from group "$(win.eventdata.TargetUserName)" by "$(win.eventdata.SubjectUserName)" - Event ID - $(win.system.eventID)</description>
+    <group>group_changed,win_group_changed,pci_dss_8.1.2,pci_dss_10.2.5,gpg13_7.10,gdpr_IV_35.7.d,gdpr_IV_32.2,hipaa_164.312.a.2.I,hipaa_164.312.a.2.II,hipaa_164.312.b,nist_800_53_AC.2,nist_800_53_IA.4,nist_800_53_AU.14,nist_800_53_AC.7,tsc_CC6.8,tsc_CC7.2,tsc_CC7.3,</group>
+    <mitre>
+      <id>T1484</id> <!-- Execution Guardrails -->
+    </mitre>
+  </rule>
+
+  <rule id="110014" level="6">
+    <if_sid>60113,60147,60148,60150</if_sid>
+    <field name="win.system.eventID">^639$|^4735$|^641$|^4737$|^659$|^4755$</field> <!-- Group Changed -->
+    <description>Group "$(win.eventdata.TargetUserName)" was changed by "$(win.eventdata.SubjectUserName)" - Event ID - $(win.system.eventID)</description>
+    <group>group_changed,win_group_changed,pci_dss_8.1.2,pci_dss_10.2.5,gpg13_7.10,gdpr_IV_35.7.d,gdpr_IV_32.2,hipaa_164.312.a.2.I,hipaa_164.312.a.2.II,hipaa_164.312.b,nist_800_53_AC.2,nist_800_53_IA.4,nist_800_53_AU.14,nist_800_53_AC.7,tsc_CC6.8,tsc_CC7.2,tsc_CC7.3,</group>
+    <mitre>
+      <id>T1484</id> <!-- Execution Guardrails -->
+    </mitre>
+  </rule>
+  
+</group> 
