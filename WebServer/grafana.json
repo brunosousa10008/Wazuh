@@ -1,0 +1,1674 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 1,
+  "links": [],
+  "panels": [
+    {
+      "datasource": {
+        "type": "grafana-opensearch-datasource",
+        "uid": "devx5cgmb4we8d"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 1,
+      "options": {
+        "SVGBaseFix": true,
+        "add100Percentage": true,
+        "calcsMutation": "standard",
+        "centerAlignContent": true,
+        "codeData": "{\n  \"text\": \"Random text\"\n}",
+        "css": "html, body, div, span, applet, object, iframe,\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\na, abbr, acronym, address, big, cite, code,\ndel, dfn, em, img, ins, kbd, q, s, samp,\nsmall, strike, strong, sub, sup, tt, var,\nb, u, i, center,\ndl, dt, dd, ol, ul, li,\nfieldset, form, label, legend,\ntable, caption, tbody, tfoot, thead, tr, th, td,\narticle, aside, canvas, details, embed, \nfigure, figcaption, footer, header, hgroup, \nmenu, nav, output, ruby, section, summary,\ntime, mark, audio, video {\n    margin: 0;\n    padding: 0;\n    border: 0;\n    font-size: 100%;\n    font: inherit;\n    vertical-align: baseline;\n}\n/* HTML5 display-role reset for older browsers */\narticle, aside, details, figcaption, figure, \nfooter, header, hgroup, menu, nav, section {\n    display: block;\n}\n\nol, ul {\n    list-style: none;\n}\nblockquote, q {\n    quotes: none;\n}\n\ntable {\n    border-collapse: collapse;\n    border-spacing: 0;\n}\n\nheader {\n    display:flex;gap:12px;\n    align-items:center;\n    justify-content:space-between;\n    padding:16px 20px;border-bottom:1px solid #1b2949;\n    background:#0c172b;\n    border-radius: 10px;\n    \n    margin-bottom: 1rem;\n}\nheader h1{\n    font-size:18px;\n    margin:0;\n    font-weight:700;\n    letter-spacing:.2px;\n}\n\nheader .meta{\n    font-size:12px;\n    color:var(--muted);\n}\n\nmain {\n    line-height: 1;\n    color: var(--text);\n    font: 14px / 1.45 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, \"Apple Color Emoji\", \"Segoe UI Emoji\";\n    height: 100%;\n}\n\nmain .kpis {\n    display: grid;\n    grid-template-columns: repeat(5, 1fr);\n    gap: 12px;\n    margin: 0rem 1rem;\n}\n\nmain .kpis .kpi {\n    padding: 14px;\n    border-radius: 12px;\n    background: linear-gradient(180deg, #132f3b, #0f2130);\n    border: 1px solid #1e364a;\n    height: 129px;\n    display: flex;\n    flex-direction: column;\n    align-items: start;\n    justify-content: center;\n\n}\n\nmain .kpis .kpi .label {\n    font-size: 12px;\n    color: #9fb3c8;\n    text-transform: uppercase;\n    letter-spacing: .6px;\n}\n\nmain .kpis .kpi .value {\n    font-size: 28px;\n    font-weight: 700;\n    margin-top: 4px;\n}\n\nmain .kpis .kpi .mitre {\n    font-size: 12px;\n    margin-top: 6px;\n    color: var(--muted);\n    margin-top: 1rem;\n}",
+        "dynamicData": false,
+        "dynamicFieldDisplayValues": false,
+        "dynamicHtmlGraphics": false,
+        "dynamicProps": false,
+        "html": "<main>\n    <header>\n        <h1>BSsec • Web Attack 01 • MITRE ATT&CK</h1>\n        <div class=\"meta\">Fonte: Wazuh Siem • Atualizado <span id=\"datadeagora\"></span></div>\n    </header>\n    <section class=\"kpis\">\n        <div class=\"kpi\">\n            <div class=\"label\">SQL Injection attempt</div>\n            <div id=\"kpi-sqli\" class=\"value\">null</div>\n            <div class=\"mitre\">T1190</div>\n        </div>\n        <div class=\"kpi\">\n            <div class=\"label\">LFI/Path traversal attempt</div>\n            <div id=\"kpi-pt\" class=\"value\">null</div>\n            <div class=\"mitre\">T1055, T1083, T1190</div>\n        </div>\n        <div class=\"kpi\">\n            <div class=\"label\">XSS attempt</div>\n            <div id=\"kpi-xss\" class=\"value\">null</div>\n            <div class=\"mitre\">T1059.007</div>\n        </div>\n        <div class=\"kpi\">\n            <div class=\"label\">Reverse Shell attempt</div>\n            <div id=\"kpi-rs\" class=\"value\">null</div>\n            <div class=\"mitre\">T1190</div>\n        </div>\n        <div class=\"kpi\">\n            <div class=\"label\">Crawler Detected</div>\n            <div id=\"kpi-cd\" class=\"value\" id=\"\">null</div>\n            <div class=\"mitre\">T1190</div>\n        </div>\n    </section>\n</main>",
+        "onInit": "",
+        "onInitOnResize": false,
+        "onRender": "const htmlgraphicsValue = htmlNode.getElementById('datadeagora');\n\nif (htmlgraphicsValue) {\n  const data = new Date();\n  const dia = String(data.getDate()).padStart(2, '0');\n  const mes = String(data.getMonth() + 1).padStart(2, '0'); // meses começam em 0\n  const ano = data.getFullYear();\n\n  const horas = String(data.getHours()).padStart(2, '0');\n  const minutos = String(data.getMinutes()).padStart(2, '0');\n  const segundos = String(data.getSeconds()).padStart(2, '0');\n\n  const dataHoraFormatada = `${dia}/${mes}/${ano}, ${horas}:${minutos}:${segundos}`;\n\n  htmlgraphicsValue.textContent = dataHoraFormatada;\n}\n\nconst valuesAttackers = data.series[0].fields[1].values;\n\n// Mapeia os IDs dos elementos com os índices correspondentes\nconst kpiMap = [\"kpi-sqli\", \"kpi-pt\", \"kpi-xss\", \"kpi-rs\", \"kpi-cd\"];\n\n// Atualiza os elementos dinamicamente\nkpiMap.forEach((id, index) => {\n  const element = htmlNode.getElementById(id);\n  if (element) {\n    element.innerText = valuesAttackers[index] ?? 0; // usa 0 se não existir valor\n  }\n});",
+        "overflow": "visible",
+        "panelupdateOnMount": true,
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull",
+            "last",
+            "firstNotNull",
+            "first",
+            "min",
+            "max",
+            "mean",
+            "sum",
+            "count",
+            "range",
+            "delta",
+            "step",
+            "diff",
+            "logmin",
+            "allIsZero",
+            "allIsNull",
+            "diffperc"
+          ]
+        },
+        "renderOnMount": true,
+        "rootCSS": ":root {\r\n    --bg:#0b1220; \r\n    --panel:#0f1a30; \r\n    --muted:#99a3b3; \r\n    --text:#e7ecf3; \r\n    --accent:#4cc9f0; \r\n    --ok:#5dd39e; \r\n    --warn:#ffd166; \r\n    --bad:#ef476f;\r\n}\r\n\r\nhtml, body {\r\n    min-height: 100vh;\r\n    margin: 0;\r\n    background: #0B1220;\r\n    color: var(--text);\r\n}",
+        "useGrafanaScrollbar": true
+      },
+      "pluginVersion": "2.2.1",
+      "targets": [
+        {
+          "alias": "Sql Injection",
+          "bucketAggs": [
+            {
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "format": "table",
+          "luceneQueryType": "Metric",
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.id: 110004",
+          "queryType": "lucene",
+          "refId": "A",
+          "timeField": "timestamp"
+        },
+        {
+          "alias": "Path traversal",
+          "bucketAggs": [
+            {
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "devx5cgmb4we8d"
+          },
+          "format": "table",
+          "hide": false,
+          "luceneQueryType": "Metric",
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.id: 110005",
+          "queryType": "lucene",
+          "refId": "B",
+          "timeField": "timestamp"
+        },
+        {
+          "alias": "XSS",
+          "bucketAggs": [
+            {
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "devx5cgmb4we8d"
+          },
+          "format": "table",
+          "hide": false,
+          "luceneQueryType": "Metric",
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.id: 110006",
+          "queryType": "lucene",
+          "refId": "C",
+          "timeField": "timestamp"
+        },
+        {
+          "alias": "Reverse Shell",
+          "bucketAggs": [
+            {
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "devx5cgmb4we8d"
+          },
+          "format": "table",
+          "hide": false,
+          "luceneQueryType": "Metric",
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.id: 110010",
+          "queryType": "lucene",
+          "refId": "D",
+          "timeField": "timestamp"
+        },
+        {
+          "alias": "Crawler Detected",
+          "bucketAggs": [
+            {
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "devx5cgmb4we8d"
+          },
+          "format": "table",
+          "hide": false,
+          "luceneQueryType": "Metric",
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.id: 11009",
+          "queryType": "lucene",
+          "refId": "E",
+          "timeField": "timestamp"
+        }
+      ],
+      "title": "",
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "reducers": [
+              "sum"
+            ]
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "gapit-htmlgraphics-panel"
+    },
+    {
+      "datasource": {
+        "type": "grafana-opensearch-datasource",
+        "uid": "devx5cgmb4we8d"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 14,
+        "x": 0,
+        "y": 7
+      },
+      "id": 3,
+      "options": {
+        "SVGBaseFix": true,
+        "add100Percentage": true,
+        "calcsMutation": "standard",
+        "centerAlignContent": true,
+        "codeData": "{\n  \"text\": \"Random text\"\n}",
+        "css": ".main {\n  background-color: #132344;\n  border-radius: 15px;\n  padding: 1rem 0rem 0rem 2rem;\n  color: white;\n  \n}  \n\nh2 {\n  margin: 0 0 8px 0;\n  font-size: 14px;\n  color: #b6c3db;\n  text-transform: uppercase;\n  letter-spacing: .8px;\n}\n\n.chart {\n  min-height: 250px;\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  align-items: flex-end;\n  gap: 20px;\n\n}\n\n.bar-container {\n  text-align: center;\n  \n}\n\n.bar {\n  width: 120px;\n  height: auto;\n  max-height: 150px;\n  background: linear-gradient(to top, #3DA2CB,#102332, #3A0001);\n  margin-bottom: 10px;\n  transition: height 0.5s;\n  color: #fff;\n  font-family: Inter, Helvetica, Arial, sans-serif;\n  \n}\n\n.label {\n  margin-top: 5px;\n}\n\n.value {\n  margin-bottom: 5px;\n}",
+        "dynamicData": false,
+        "dynamicFieldDisplayValues": false,
+        "dynamicHtmlGraphics": false,
+        "dynamicProps": false,
+        "html": "<div class=\"main\">\n    <h2>ATTACKS BY TYPES</h2>\n    <div class=\"chart\" id=\"chart\">\n    <!-- Barras serão geradas dinamicamente -->\n    </div>\n</div>",
+        "onInit": "",
+        "onInitOnResize": false,
+        "onRender": "const namesAttackers = data.series[0].fields[0].values; \nconst valuesAttackers = data.series[0].fields[1].values; \n\nlet attacks = namesAttackers.map((name, index) => ({\n  type: name,\n  value: valuesAttackers[index]\n}));\n\n// 🔹 Ordena do maior para o menor\nattacks.sort((a, b) => b.value - a.value);\n\n// 🔹 Pega apenas os top 6\nattacks = attacks.slice(0, 5);\n\nconst chart = htmlNode.getElementById('chart');\n\nfunction renderChart(attacks){\n  chart.innerHTML = '';\n  const maxValue = Math.max(...attacks.map(d => d.value));\n\n  attacks.forEach(item => {\n    const barContainer = document.createElement('div');\n    barContainer.className = 'bar-container';\n    \n    const valueDiv = document.createElement('div');\n    valueDiv.className = 'value';\n    valueDiv.textContent = item.value;\n    \n    const barDiv = document.createElement('div');\n    barDiv.className = 'bar';\n    barDiv.style.height = (item.value / maxValue * 200) + 'px'; // altura proporcional\n    \n    const labelDiv = document.createElement('div');\n    labelDiv.className = 'label';\n    labelDiv.textContent = item.type;\n    \n    barContainer.appendChild(valueDiv);\n    barContainer.appendChild(barDiv);\n    barContainer.appendChild(labelDiv);\n    chart.appendChild(barContainer);\n  });\n}\n\nrenderChart(attacks);\n",
+        "overflow": "visible",
+        "panelupdateOnMount": true,
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull",
+            "last",
+            "firstNotNull",
+            "first",
+            "min",
+            "max",
+            "mean",
+            "sum",
+            "count",
+            "range",
+            "delta",
+            "step",
+            "diff",
+            "logmin",
+            "allIsZero",
+            "allIsNull",
+            "diffperc"
+          ]
+        },
+        "renderOnMount": true,
+        "rootCSS": "",
+        "useGrafanaScrollbar": false
+      },
+      "pluginVersion": "2.2.1",
+      "targets": [
+        {
+          "alias": "SQLi",
+          "bucketAggs": [
+            {
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "format": "table",
+          "luceneQueryType": "Metric",
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.id: 110004",
+          "queryType": "lucene",
+          "refId": "A",
+          "timeField": "timestamp"
+        },
+        {
+          "alias": "Path Transversal/LFI",
+          "bucketAggs": [
+            {
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "devx5cgmb4we8d"
+          },
+          "format": "table",
+          "hide": false,
+          "luceneQueryType": "Metric",
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.id: 110005",
+          "queryType": "lucene",
+          "refId": "B",
+          "timeField": "timestamp"
+        },
+        {
+          "alias": "XSS",
+          "bucketAggs": [
+            {
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "devx5cgmb4we8d"
+          },
+          "format": "table",
+          "hide": false,
+          "luceneQueryType": "Metric",
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.id: 110006",
+          "queryType": "lucene",
+          "refId": "C",
+          "timeField": "timestamp"
+        },
+        {
+          "alias": "Sensitive File",
+          "bucketAggs": [
+            {
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "devx5cgmb4we8d"
+          },
+          "format": "table",
+          "hide": false,
+          "luceneQueryType": "Metric",
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.id: 110007",
+          "queryType": "lucene",
+          "refId": "D",
+          "timeField": "timestamp"
+        },
+        {
+          "alias": "WordPress Scan",
+          "bucketAggs": [
+            {
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "devx5cgmb4we8d"
+          },
+          "format": "table",
+          "hide": false,
+          "luceneQueryType": "Metric",
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.id: 110008",
+          "queryType": "lucene",
+          "refId": "E",
+          "timeField": "timestamp"
+        },
+        {
+          "alias": "Crawler Detected",
+          "bucketAggs": [
+            {
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "devx5cgmb4we8d"
+          },
+          "format": "table",
+          "hide": false,
+          "luceneQueryType": "Metric",
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.id: 110009",
+          "queryType": "lucene",
+          "refId": "F",
+          "timeField": "timestamp"
+        },
+        {
+          "alias": "Reverse Shell",
+          "bucketAggs": [
+            {
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "devx5cgmb4we8d"
+          },
+          "format": "table",
+          "hide": false,
+          "luceneQueryType": "Metric",
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.id: 110010",
+          "queryType": "lucene",
+          "refId": "G",
+          "timeField": "timestamp"
+        },
+        {
+          "alias": "Shellshock",
+          "bucketAggs": [
+            {
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "devx5cgmb4we8d"
+          },
+          "format": "table",
+          "hide": false,
+          "luceneQueryType": "Metric",
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.id: 110011",
+          "queryType": "lucene",
+          "refId": "H",
+          "timeField": "timestamp"
+        }
+      ],
+      "title": "",
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "reducers": [
+              "sum"
+            ]
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "gapit-htmlgraphics-panel"
+    },
+    {
+      "datasource": {
+        "type": "grafana-opensearch-datasource",
+        "uid": "devx5cgmb4we8d"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 10,
+        "x": 14,
+        "y": 7
+      },
+      "id": 9,
+      "options": {
+        "SVGBaseFix": true,
+        "add100Percentage": true,
+        "calcsMutation": "standard",
+        "centerAlignContent": true,
+        "codeData": "{\n  \"text\": \"Random text\"\n}",
+        "css": ".main {\n  border-radius: 15px;\n  padding: 1rem 0rem 0rem 2rem;\n  color: white;\n}  \n\nh2 {\n  margin: 0 0 8px 0;\n  font-size: 14px;\n  color: #b6c3db;\n  text-transform: uppercase;\n  letter-spacing: .8px;\n}\n\ntable {\n  width: 100%;\n  border-collapse: separate;\n  border-spacing: 0; /* vamos usar gap pelo flex/grid */\n}\n\nthead {\n  display: table-header-group; /* mantém cabeçalho como tabela */\n\n}\n\ntbody {\n  display: grid;\n  row-gap: 10px; /* espaço entre linhas */\n}\n\ntr {\ndisplay: grid;\ngrid-template-columns: 2fr 1fr 1fr 1fr;  \ngap: 1rem; /* espaço entre colunas */\n}\n\nth {\n  text-align: start;\n  margin-bottom: 1rem;\n}\n\nth, td {\n  padding: 12px 15px;\n  background-color: #0E203A;\n  border-radius: 8px;\n  color: white;\n  font-size: 14px;\n\n}\n\nth {\n  color: #8fb3e1;\n  font-weight: 500;\n}\n\ntd:first-child,\nth:first-child {\n  min-width: 200px; /* primeira coluna maior */\n}\n\ntd:first-child {\n  border-top-left-radius: 8px;\n  border-bottom-left-radius: 8px;\n}\n\ntd:last-child {\n  border-top-right-radius: 8px;\n  border-bottom-right-radius: 8px;\n}\n\n.footer {\n  margin-top: 10px;\n  font-size: 12px;\n  color: #b0b0b0;\n}\n",
+        "dynamicData": false,
+        "dynamicFieldDisplayValues": false,
+        "dynamicHtmlGraphics": false,
+        "dynamicProps": false,
+        "html": "<main>\n  <h2>MAPA MITRE ATT&CK (TÉCNICAS RELACIONADAS)</h2>\n\n  <table id=\"mitreTable\">\n    <thead>\n      <tr>\n        <th>Técnica</th>\n        <th>ID</th>\n        <th>Severidade</th>\n        <th>Detectado</th>\n      </tr>\n    </thead>\n    <tbody>\n      <!-- Linhas via JS -->\n    </tbody>\n  </table>\n\n  <div class=\"footer\" id=\"footer\">MITRE Tactic defines the objectives an attacker seeks to achieve at each stage of a cyberattack.</div>\n</main>",
+        "onInit": "// Sets the text from customProperties\nconst htmlgraphicsText = htmlNode.getElementById('htmlgraphics-text');\n\nif (htmlgraphicsText) {\n  htmlgraphicsText.textContent = customProperties.text;\n\n  // Change the text color based on the theme\n  if (theme.isDark) {\n    htmlgraphicsText.style.color = 'green';\n  } else {\n    htmlgraphicsText.style.color = 'red';\n  }\n}\n",
+        "onInitOnResize": false,
+        "onRender": "// Garante que data.series[0]?.fields exista\nconst valuesAttackers = data?.series?.[0]?.fields || [];\n\n// Se não tiver valores, evita erro\nif (valuesAttackers.length < 4) {\n  console.warn(\"Sem dados para montar tabela MITRE\");\n} else {\n  // Converte colunas em array de objetos\n  const mitreTechnique = valuesAttackers[0].values.map((_, index) => ({\n    tecnica: valuesAttackers[0].values?.[index] ?? \"\",\n    id: valuesAttackers[1].values?.[index] ?? \"\",\n    severidade: valuesAttackers[2].values?.[index] ?? \"\",\n    detectado: valuesAttackers[3].values?.[index] ?? \"\"\n  }));\n\n  // Ordena do maior detectado para o menor (tratando caso vazio)\n  mitreTechnique.sort((a, b) => (b.detectado || 0) - (a.detectado || 0));\n\n  // Seleciona o tbody da tabela\n  const tableBody = htmlNode.querySelector(\"#mitreTable tbody\");\n  tableBody.innerHTML = \"\"; // Limpa linhas antigas\n\n  // Popula a tabela\n  mitreTechnique.forEach(item => {\n    const row = document.createElement(\"tr\");\n    row.innerHTML = `\n      <td>${item.tecnica}</td>\n      <td>${item.id}</td>\n      <td>${item.severidade ? item.severidade + \"/15\" : \"\"}</td>\n      <td>${item.detectado}</td>\n    `;\n    tableBody.appendChild(row);\n  });\n}\n",
+        "overflow": "auto",
+        "panelupdateOnMount": true,
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull",
+            "last",
+            "firstNotNull",
+            "first",
+            "min",
+            "max",
+            "mean",
+            "sum",
+            "count",
+            "range",
+            "delta",
+            "step",
+            "diff",
+            "logmin",
+            "allIsZero",
+            "allIsNull",
+            "diffperc"
+          ]
+        },
+        "renderOnMount": true,
+        "rootCSS": "",
+        "useGrafanaScrollbar": true
+      },
+      "pluginVersion": "2.2.1",
+      "targets": [
+        {
+          "alias": "",
+          "bucketAggs": [
+            {
+              "field": "rule.mitre.technique",
+              "id": "2",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "rule.level",
+              "id": "3",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "rule.mitre.id",
+              "id": "4",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            }
+          ],
+          "format": "table",
+          "luceneQueryType": "Metric",
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.groups: \"web\"",
+          "queryType": "lucene",
+          "refId": "A",
+          "timeField": "timestamp"
+        }
+      ],
+      "title": "",
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {},
+            "includeByName": {},
+            "indexByName": {
+              "Count": 3,
+              "rule.level": 2,
+              "rule.mitre.id": 1,
+              "rule.mitre.technique": 0
+            },
+            "renameByName": {
+              "Count": "Count",
+              "rule.level": "level",
+              "rule.mitre.id": "id",
+              "rule.mitre.technique": "Technique"
+            }
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "gapit-htmlgraphics-panel"
+    },
+    {
+      "datasource": {
+        "type": "grafana-opensearch-datasource",
+        "uid": "devx5cgmb4we8d"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 0,
+        "y": 16
+      },
+      "id": 4,
+      "options": {
+        "SVGBaseFix": true,
+        "add100Percentage": true,
+        "calcsMutation": "standard",
+        "centerAlignContent": true,
+        "codeData": "{\n  \"text\": \"\"\n}",
+        "css": ".main {\n    display: flex;\n    align-items: center;\n    gap: 50px;\n    background-color: #132344;\n    border-radius: 15px;\n    padding: 0.2rem 0rem 0.5rem 2rem;\n    color: white;\n}\nh2 {\n    margin-bottom: 10px;\n    color: #B6BED1;\n    font-weight: 600;\n    font-size: 1.2rem;\n}\n.pie-chart {\n    width: 150px;\n    height: 150px;\n    border-radius: 50%;\n    background: conic-gradient(\n        #590004 0deg 108deg,\n        #3A0001 108deg 360deg\n    );\n    box-shadow: 0 6px 15px rgba(0,0,0,0.1);\n    transition: all 0.3s ease;\n}\n\n/* Tabela */\ntable {\n    border-collapse: collapse;\n    font-size: 1rem;\n    text-align: left;\n}\n\nth, td {\n    padding: 8px 12px;\n    font-weight: bold;\n}\n\nth {\n    color: #B6BED1;\n    font-weight: 600;\n}\n\ntd:first-child {\n    width: 15px;\n    height: 15px;\n    border-radius: 50%;\n}\n\ntd:nth-child(2), td:nth-child(3) {\n    padding-left: 10px;\n}\n\ntr + tr td {\n    border-top: 1px solid #ddd;\n}",
+        "dynamicData": false,
+        "dynamicFieldDisplayValues": false,
+        "dynamicHtmlGraphics": false,
+        "dynamicProps": false,
+        "html": "<div class=\"main\">\n    <div>\n        <h2>COUNT ALERTS DoS | DDoS</h2>\n        <div class=\"pie-chart\" id=\"pieChart\"></div>\n    </div>\n\n\n    <table>\n        <thead>\n            <tr>\n                <th style=\"background-color: trasnpart; width: 10px; height: 10px;\"></th>\n                <th>Tipo</th>\n                <th>Quantidade</th>\n            </tr>\n        </thead>\n        <tbody>\n            <tr>\n                <td style=\"background-color: #590004; width: 10px; height: 10px;\"></td>\n                <td>DoS</td>\n                <td id=\"dosValue\">30</td>\n            </tr>\n            <tr>\n                <td style=\"background-color: #3A0001; width: 10px; height: 10px;\"></td>\n                <td>DDoS</td>\n                <td id=\"ddosValue\">70</td>\n            </tr>\n        </tbody>\n    </table>\n</div>",
+        "onInit": "",
+        "onInitOnResize": false,
+        "onRender": "const valuesAttackers = data.series[0].fields[1].values;\n // Valores\nlet dos = valuesAttackers[0];\nlet ddos = valuesAttackers[1];\n\n// Calcular ângulos\nconst total = dos + ddos;\nconst dosAngle = (dos / total) * 360;\nconst ddosAngle = (ddos / total) * 360;\n\n// Atualizar gráfico\nconst pieChart = htmlNode.getElementById('pieChart');\npieChart.style.background = `conic-gradient(\n    #590004 0deg ${dosAngle}deg,\n    #3A0001 ${dosAngle}deg 360deg\n)`;\n\n// Atualizar tabela\nhtmlNode.getElementById('dosValue').textContent = dos;\nhtmlNode.getElementById('ddosValue').textContent = ddos;",
+        "overflow": "visible",
+        "panelupdateOnMount": true,
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull",
+            "last",
+            "firstNotNull",
+            "first",
+            "min",
+            "max",
+            "mean",
+            "sum",
+            "count",
+            "range",
+            "delta",
+            "step",
+            "diff",
+            "logmin",
+            "allIsZero",
+            "allIsNull",
+            "diffperc"
+          ]
+        },
+        "renderOnMount": true,
+        "rootCSS": "",
+        "useGrafanaScrollbar": false
+      },
+      "pluginVersion": "2.2.1",
+      "targets": [
+        {
+          "alias": "DoS",
+          "bucketAggs": [
+            {
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "format": "table",
+          "hide": false,
+          "luceneQueryType": "Metric",
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.groups: \"web\" AND rule.id: 110002",
+          "queryType": "lucene",
+          "refId": "A",
+          "timeField": "timestamp"
+        },
+        {
+          "alias": "DDoS",
+          "bucketAggs": [
+            {
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "devx5cgmb4we8d"
+          },
+          "format": "table",
+          "hide": false,
+          "luceneQueryType": "Metric",
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.groups: \"web\" AND rule.id: 110003",
+          "queryType": "lucene",
+          "refId": "B",
+          "timeField": "timestamp"
+        }
+      ],
+      "title": "",
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "reducers": [
+              "sum"
+            ]
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "gapit-htmlgraphics-panel"
+    },
+    {
+      "datasource": {
+        "type": "grafana-opensearch-datasource",
+        "uid": "devx5cgmb4we8d"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 9,
+        "x": 8,
+        "y": 16
+      },
+      "id": 2,
+      "options": {
+        "SVGBaseFix": true,
+        "add100Percentage": true,
+        "calcsMutation": "standard",
+        "centerAlignContent": true,
+        "codeData": "{\n  \"text\": \"Random text\"\n}",
+        "css": ".main {\n  border-radius: 15px;\n  background-color: #132344;\n  padding: 1rem 2rem 0rem 2rem;\n  \n}  \n\n.status-container {\n  width: 600px;\n  \n}\n\nh2 {\n  margin: 0 0 8px 0;\n  font-size: 14px;\n  color: #b6c3db;\n  text-transform: uppercase;\n  letter-spacing: .8px;\n}\n\n.bar {\n  display: flex;\n  height: 20px;\n  border-radius: 5px;\n  overflow: hidden;\n  margin-top: 10px;\n  background-color: #333;\n}\n\n.segment {\n  height: 100%;\n}\n\n.success { background-color: #8ce99a; } /* 2xx */\n.redirect { background-color: #ffd43b; } /* 3xx */\n.client-error { background-color: #ff922b; } /* 4xx */\n.server-error { background-color: #ff6b6b; } /* 5xx */\n\n.legend {\n  margin-top: 10px;\n  font-size: 14px;\n  flex-direction: row;\n  gap: 1rem;\n  color: #B8C7DC;\n  \n}",
+        "dynamicData": false,
+        "dynamicFieldDisplayValues": false,
+        "dynamicHtmlGraphics": false,
+        "dynamicProps": false,
+        "html": "<div class=\"status-container main\">\n  <h2>STATUS HTTP</h2>\n  <div class=\"bar\">\n    <div class=\"segment success\" id=\"success\"></div>\n    <div class=\"segment redirect\" id=\"redirect\"></div>\n    <div class=\"segment client-error\" id=\"clientError\"></div>\n    <div class=\"segment server-error\" id=\"serverError\"></div>\n  </div>\n  <div class=\"legend\" id=\"legend\"></div>\n  <div class=\"tip\" style=\"margin-top: 5px; font-size: 12px; color: #aaa;\">\n    Tip: 4xx/5xx or higher may indicate exploitation or application flaws.\n  </div>\n</div>",
+        "onInit": "",
+        "onInitOnResize": false,
+        "onRender": "const valuesAttackers = data.series[0].fields[1].values;\n\n// Valores iniciais\nconst statusCounts = {\n  success: valuesAttackers[0],\n  redirect: valuesAttackers[1],\n  clientError: valuesAttackers[2],\n  serverError: valuesAttackers[3]\n};\n\nfunction updateBar(counts) {\n  const total = Object.values(counts).reduce((a, b) => a + b, 0);\n\n  htmlNode.getElementById('success').style.width = (counts.success / total * 100) + '%';\n  htmlNode.getElementById('redirect').style.width = (counts.redirect / total * 100) + '%';\n  htmlNode.getElementById('clientError').style.width = (counts.clientError / total * 100) + '%';\n  htmlNode.getElementById('serverError').style.width = (counts.serverError / total * 100) + '%';\n\n  // Atualiza a legenda\n  htmlNode.getElementById('legend').innerHTML = `\n    <span>🟩2xx: ${counts.success} (${(counts.success/total*100).toFixed(1)}%)</span>\n    <span>🟨3xx: ${counts.redirect} (${(counts.redirect/total*100).toFixed(1)}%)</span>\n    <span>🟧4xx: ${counts.clientError} (${(counts.clientError/total*100).toFixed(1)}%)</span>\n    <span>🟥5xx: ${counts.serverError} (${(counts.serverError/total*100).toFixed(1)}%)</span>\n  `;\n}\n\n// Inicializa a barra\nupdateBar(statusCounts);",
+        "overflow": "visible",
+        "panelupdateOnMount": true,
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull",
+            "last",
+            "firstNotNull",
+            "first",
+            "min",
+            "max",
+            "mean",
+            "sum",
+            "count",
+            "range",
+            "delta",
+            "step",
+            "diff",
+            "logmin",
+            "allIsZero",
+            "allIsNull",
+            "diffperc"
+          ]
+        },
+        "renderOnMount": true,
+        "rootCSS": "",
+        "useGrafanaScrollbar": false
+      },
+      "pluginVersion": "2.2.1",
+      "targets": [
+        {
+          "alias": "StatusCode Success",
+          "bucketAggs": [
+            {
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "format": "table",
+          "luceneQueryType": "Metric",
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.groups: \"web\" AND data.status_code: 2*",
+          "queryType": "lucene",
+          "refId": "A",
+          "timeField": "timestamp"
+        },
+        {
+          "alias": "StatusRedirect Success",
+          "bucketAggs": [
+            {
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "devx5cgmb4we8d"
+          },
+          "format": "table",
+          "hide": false,
+          "luceneQueryType": "Metric",
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.groups: \"web\" AND data.status_code: 3*",
+          "queryType": "lucene",
+          "refId": "B",
+          "timeField": "timestamp"
+        },
+        {
+          "alias": "StatusRedirect ClientError",
+          "bucketAggs": [
+            {
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "devx5cgmb4we8d"
+          },
+          "format": "table",
+          "hide": false,
+          "luceneQueryType": "Metric",
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.groups: \"web\" AND data.status_code: 4*",
+          "queryType": "lucene",
+          "refId": "C",
+          "timeField": "timestamp"
+        },
+        {
+          "alias": "StatusRedirect ServerError",
+          "bucketAggs": [
+            {
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "devx5cgmb4we8d"
+          },
+          "format": "table",
+          "hide": false,
+          "luceneQueryType": "Metric",
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.groups: \"web\" AND data.status_code: 5*",
+          "queryType": "lucene",
+          "refId": "D",
+          "timeField": "timestamp"
+        }
+      ],
+      "title": "",
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "labelsToFields": false,
+            "reducers": [
+              "sum"
+            ]
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "gapit-htmlgraphics-panel"
+    },
+    {
+      "datasource": {
+        "type": "grafana-opensearch-datasource",
+        "uid": "devx5cgmb4we8d"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 7,
+        "x": 17,
+        "y": 16
+      },
+      "id": 10,
+      "options": {
+        "SVGBaseFix": true,
+        "add100Percentage": true,
+        "calcsMutation": "standard",
+        "centerAlignContent": true,
+        "codeData": "{\n  \"text\": \"Random text\"\n}",
+        "css": "main {\r\n  border-radius: 15px;\r\n  background-color: #132344;\r\n  padding: 1rem 2rem 0rem 2rem;\r\n}\r\n\r\nh2 {\r\n  margin: 0 0 8px 0;\r\n  font-size: 14px;\r\n  color: #b6c3db;\r\n  text-transform: uppercase;\r\n  letter-spacing: .8px;\r\n}\r\n\r\n.chart-container {\r\n  max-width: 800px;\r\n  padding: 10px;\r\n  border-radius: 16px;\r\n  transition: transform 0.2s ease-in-out;\r\n  overflow: auto;\r\n  max-height: 200px;\r\n}\r\n\r\n.chart-container:hover {\r\n  transform: translateY(-5px);\r\n}\r\n\r\n.bar {\r\n  display: flex;\r\n  align-items: center;\r\n  margin: 15px 0;\r\n}\r\n\r\n.bar-label {\r\n  width: 130px;\r\n  font-weight: 600;\r\n  color: white;\r\n  font-size: 1em;\r\n}\r\n\r\n.bar-value {\r\n  background: linear-gradient(90deg, #6a11cb, #2575fc);\r\n  height: 32px;\r\n  border-radius: 8px;\r\n  text-align: right;\r\n  padding-right: 12px;\r\n  color: #fff;\r\n  font-weight: bold;\r\n  line-height: 32px;\r\n  transition: width 0.6s ease, transform 0.2s;\r\n  box-shadow: 0 3px 6px rgba(0,0,0,0.15);\r\n}\r\n\r\n.bar-value:hover {\r\n  transform: scale(1.05);\r\n  cursor: pointer;\r\n}",
+        "dynamicData": false,
+        "dynamicFieldDisplayValues": false,
+        "dynamicHtmlGraphics": false,
+        "dynamicProps": false,
+        "html": "<main>\r\n  <h2>Dashboard de Crawlers</h2>\r\n\r\n  <div class=\"chart-container\" id=\"crawlerChart\">\r\n    <!-- Barras serão adicionadas aqui -->\r\n  </div>\r\n</main>",
+        "onInit": "",
+        "onInitOnResize": false,
+        "onRender": "// Garante que data.series[0]?.fields exista e tenha pelo menos duas colunas\r\nconst valuesAttackers = data.series?.[0]?.fields || [];\r\n\r\n// Converte colunas em array de objetos, garantindo valores default 0 ou \"\"\r\nconst crawlersmap = (valuesAttackers[0]?.values || []).map((_, index) => ({\r\n  name: valuesAttackers[0].values?.[index] ?? \"N/A\",\r\n  count: valuesAttackers[1]?.values?.[index] ?? 0\r\n}));\r\n\r\nconst crawlers = crawlersmap.map(item => ({\r\n  name: item.name,\r\n  count: Number(item.count) || 0 \r\n}));\r\n\r\nconst chart = htmlNode.getElementById('crawlerChart');\r\n\r\nfunction renderChart() {\r\n  chart.innerHTML = '';\r\n  \r\n  // Ordena do maior para o menor\r\n  crawlers.sort((a, b) => b.count - a.count);\r\n\r\n  // Se não houver dados, coloca um item default\r\n  const displayCrawlers = crawlers.length ? crawlers : [{ name: \"No crawler\", count: 0 }];\r\n\r\n  const maxCount = Math.max(...displayCrawlers.map(c => c.count)) || 1;\r\n\r\n  displayCrawlers.forEach(crawler => {\r\n    const barContainer = document.createElement('div');\r\n    barContainer.className = 'bar';\r\n    \r\n    const label = document.createElement('div');\r\n    label.className = 'bar-label';\r\n    label.textContent = crawler.name;\r\n\r\n    const value = document.createElement('div');\r\n    value.className = 'bar-value';\r\n    const widthPercent = (crawler.count / maxCount) * 100;\r\n    value.style.width = widthPercent + '%';\r\n    value.textContent = crawler.count;\r\n\r\n    barContainer.appendChild(label);\r\n    barContainer.appendChild(value);\r\n    chart.appendChild(barContainer);\r\n  });\r\n}\r\n\r\nrenderChart();\r\n",
+        "overflow": "visible",
+        "panelupdateOnMount": true,
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull",
+            "last",
+            "firstNotNull",
+            "first",
+            "min",
+            "max",
+            "mean",
+            "sum",
+            "count",
+            "range",
+            "delta",
+            "step",
+            "diff",
+            "logmin",
+            "allIsZero",
+            "allIsNull",
+            "diffperc"
+          ]
+        },
+        "renderOnMount": true,
+        "rootCSS": "",
+        "useGrafanaScrollbar": false
+      },
+      "pluginVersion": "2.2.1",
+      "targets": [
+        {
+          "alias": "",
+          "bucketAggs": [
+            {
+              "field": "data.user_agent",
+              "id": "3",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "1",
+                "size": "0"
+              },
+              "type": "terms"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "devx5cgmb4we8d"
+          },
+          "format": "table",
+          "hide": false,
+          "luceneQueryType": "Metric",
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.id: 11009",
+          "queryType": "lucene",
+          "refId": "A",
+          "timeField": "timestamp"
+        }
+      ],
+      "title": "",
+      "transparent": true,
+      "type": "gapit-htmlgraphics-panel"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "-- Dashboard --"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 9,
+        "x": 0,
+        "y": 24
+      },
+      "id": 8,
+      "options": {
+        "SVGBaseFix": true,
+        "add100Percentage": true,
+        "calcsMutation": "standard",
+        "centerAlignContent": true,
+        "codeData": "{\n  \"text\": \"Random text\"\n}",
+        "css": "h2 {\r\n    margin-bottom: 10px;\r\n    color: #B6BED1;\r\n    font-weight: 600;\r\n    font-size: 1.2rem;\r\n    background-color: #102432;\r\n    padding: 1rem 2rem 0rem 2rem;\r\n    border-radius: 5px;\r\n}",
+        "dynamicData": false,
+        "dynamicFieldDisplayValues": false,
+        "dynamicHtmlGraphics": false,
+        "dynamicProps": false,
+        "html": "<h2>TOP 7 ATTACKERS</h2>",
+        "onInit": "// Sets the text from customProperties\nconst htmlgraphicsText = htmlNode.getElementById('htmlgraphics-text');\n\nif (htmlgraphicsText) {\n  htmlgraphicsText.textContent = customProperties.text;\n\n  // Change the text color based on the theme\n  if (theme.isDark) {\n    htmlgraphicsText.style.color = 'green';\n  } else {\n    htmlgraphicsText.style.color = 'red';\n  }\n}\n",
+        "onInitOnResize": false,
+        "onRender": "",
+        "overflow": "visible",
+        "panelupdateOnMount": true,
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull",
+            "last",
+            "firstNotNull",
+            "first",
+            "min",
+            "max",
+            "mean",
+            "sum",
+            "count",
+            "range",
+            "delta",
+            "step",
+            "diff",
+            "logmin",
+            "allIsZero",
+            "allIsNull",
+            "diffperc"
+          ]
+        },
+        "renderOnMount": true,
+        "rootCSS": "",
+        "useGrafanaScrollbar": false
+      },
+      "pluginVersion": "2.2.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "datasource",
+            "uid": "-- Dashboard --"
+          },
+          "refId": "A"
+        }
+      ],
+      "title": "",
+      "transparent": true,
+      "type": "gapit-htmlgraphics-panel"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "-- Dashboard --"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 15,
+        "x": 9,
+        "y": 24
+      },
+      "id": 6,
+      "options": {
+        "SVGBaseFix": true,
+        "add100Percentage": true,
+        "calcsMutation": "standard",
+        "centerAlignContent": true,
+        "codeData": "{\n  \"text\": \"Random text\"\n}",
+        "css": "h2 {\r\n    margin-bottom: 10px;\r\n    color: #B6BED1;\r\n    font-weight: 600;\r\n    font-size: 1.2rem;\r\n    background-color: #102432;\r\n    padding: 1rem 2rem 0rem 2rem;\r\n    border-radius: 5px;\r\n}",
+        "dynamicData": false,
+        "dynamicFieldDisplayValues": false,
+        "dynamicHtmlGraphics": false,
+        "dynamicProps": false,
+        "html": "<h2>REQUESTS</h2>",
+        "onInit": "// Sets the text from customProperties\nconst htmlgraphicsText = htmlNode.getElementById('htmlgraphics-text');\n\nif (htmlgraphicsText) {\n  htmlgraphicsText.textContent = customProperties.text;\n\n  // Change the text color based on the theme\n  if (theme.isDark) {\n    htmlgraphicsText.style.color = 'green';\n  } else {\n    htmlgraphicsText.style.color = 'red';\n  }\n}\n",
+        "onInitOnResize": false,
+        "onRender": "",
+        "overflow": "visible",
+        "panelupdateOnMount": true,
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull",
+            "last",
+            "firstNotNull",
+            "first",
+            "min",
+            "max",
+            "mean",
+            "sum",
+            "count",
+            "range",
+            "delta",
+            "step",
+            "diff",
+            "logmin",
+            "allIsZero",
+            "allIsNull",
+            "diffperc"
+          ]
+        },
+        "renderOnMount": true,
+        "rootCSS": "",
+        "useGrafanaScrollbar": false
+      },
+      "pluginVersion": "2.2.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "datasource",
+            "uid": "-- Dashboard --"
+          },
+          "refId": "A"
+        }
+      ],
+      "title": "",
+      "transparent": true,
+      "type": "gapit-htmlgraphics-panel"
+    },
+    {
+      "datasource": {
+        "type": "grafana-opensearch-datasource",
+        "uid": "devx5cgmb4we8d"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "left",
+            "cellOptions": {
+              "type": "auto",
+              "wrapText": true
+            },
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": 0
+              },
+              {
+                "color": "blue",
+                "value": 80
+              },
+              {
+                "color": "dark-red",
+                "value": 90
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Count Attack"
+            },
+            "properties": [
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "mode": "gradient",
+                  "type": "gauge",
+                  "valueDisplayMode": "text"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "IP"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 207
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 9,
+        "x": 0,
+        "y": 26
+      },
+      "id": 11,
+      "options": {
+        "cellHeight": "sm",
+        "footer": {
+          "countRows": false,
+          "enablePagination": true,
+          "fields": "",
+          "reducer": [
+            "sum"
+          ],
+          "show": false
+        },
+        "showHeader": false,
+        "sortBy": []
+      },
+      "pluginVersion": "12.1.1",
+      "targets": [
+        {
+          "alias": "",
+          "bucketAggs": [
+            {
+              "field": "data.srcip",
+              "id": "3",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "1",
+                "size": "15"
+              },
+              "type": "terms"
+            }
+          ],
+          "format": "table",
+          "luceneQueryType": "Metric",
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.groups: \"web\" AND rule.level:[5 TO *]",
+          "queryType": "lucene",
+          "refId": "A",
+          "timeField": "timestamp"
+        }
+      ],
+      "title": "",
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {},
+            "includeByName": {},
+            "indexByName": {},
+            "renameByName": {
+              "Count": "Count Attack",
+              "data.srcip": "IP"
+            }
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "table"
+    },
+    {
+      "datasource": {
+        "type": "grafana-opensearch-datasource",
+        "uid": "devx5cgmb4we8d"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "axisBorderShow": true,
+            "axisCenteredZero": false,
+            "axisColorMode": "series",
+            "axisGridShow": false,
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 100,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "dashed"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": 0
+              },
+              {
+                "color": "dark-red",
+                "value": 2500
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 15,
+        "x": 9,
+        "y": 26
+      },
+      "id": 5,
+      "options": {
+        "legend": {
+          "calcs": [
+            "sum",
+            "max"
+          ],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": false
+        },
+        "timezone": [
+          "browser"
+        ],
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "12.1.1",
+      "targets": [
+        {
+          "alias": "",
+          "bucketAggs": [
+            {
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "1m"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "format": "table",
+          "luceneQueryType": "Metric",
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "",
+          "queryType": "lucene",
+          "refId": "A",
+          "timeField": "timestamp"
+        }
+      ],
+      "title": "",
+      "transparent": true,
+      "type": "timeseries"
+    }
+  ],
+  "preload": false,
+  "schemaVersion": 41,
+  "tags": [
+    "Web",
+    "Blue Team"
+  ],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-1m",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "browser",
+  "title": "Web Attack 01",
+  "uid": "86996ca0-69d0-4d18-bc58-d19150ee56a6",
+  "version": 261
+}
