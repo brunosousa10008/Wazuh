@@ -21,7 +21,7 @@
    
   <!-- DoS -->
   <rule id="110002" level="10" frequency="300" timeframe="60"> <!-- ANALISE BASEADA NA APLICAÇÃO 300 REQUISIÇÕES EM 1MIN VINDAS DO MESMO IP-->
-     <if_matched_sid>110001</if_matched_sid>
+     <if_matched_group>web,</if_matched_group>
      <same_source_ip />
      <description>Possible DoS: more than 300 requests in 1 minute received from the same IP $(srcip)</description>
      <mitre>
@@ -32,7 +32,7 @@
   
   <!-- DDoS -->
   <rule id="110003" level="12" frequency="1000" timeframe="60"> <!-- ANALISE BASEADA NA APLICAÇÃO 1000 REQUISIÇÕES EM 1MIN VINDAS DO MESMO IP-->
-     <if_matched_sid>110001</if_matched_sid>
+     <if_matched_group>web,</if_matched_group>
      <different_srcip />
      <description>Possible DDoS: more than 1000 requests in 1 minute received from multiple IPs targeting the same resource</description>
      <mitre>
