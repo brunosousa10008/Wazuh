@@ -19,32 +19,22 @@
   #############################
   -->
    
-  <!-- DoS -->
-  <rule id="110002" level="10" frequency="300" timeframe="60"> <!-- ANALISE BASEADA NA APLICAÇÃO 300 REQUISIÇÕES EM 1MIN VINDAS DO MESMO IP-->
-     <if_matched_group>web,</if_matched_group>
-     <same_source_ip />
-     <description>Possible DoS: more than 300 requests in 1 minute received from the same IP $(srcip)</description>
-     <mitre>
-        <id>T1499</id>
+  <!-- Crawler Detected -->
+  <rule id="110002" level="7">
+    <if_sid>110000,110001</if_sid>
+    <field name="user_agent">gobuster|wfuzz|nikto|dirb|sqlmap|nmap|curl|python-requests|ZmEu|HTTrack|Wget|DirBuster|Burp|OWASP ZAP|java|Go-http-client|libwww-perl</field>
+    
+    <description>Possible crawler detected: $(user_agent)</description>
+    <mitre>
+      <id>T1190</id>
     </mitre>
-    <group>attack,dos,gdpr_IV_35.7.d,nist_800_53_SI.4,tsc_CC6.6,tsc_CC7.1</group>
-  </rule>
-  
-  <!-- DDoS -->
-  <rule id="110003" level="12" frequency="1000" timeframe="60"> <!-- ANALISE BASEADA NA APLICAÇÃO 1000 REQUISIÇÕES EM 1MIN VINDAS DO MESMO IP-->
-     <if_matched_group>web,</if_matched_group>
-     <different_srcip />
-     <description>Possible DDoS: more than 1000 requests in 1 minute received from multiple IPs targeting the same resource</description>
-     <mitre>
-        <id>T1499.001</id>
-    </mitre>
-    <group>attack,ddos,gdpr_IV_35.7.d,nist_800_53_SI.4,tsc_CC6.6,tsc_CC7.1</group>
+    <group>attack,web,scanner,crawler</group>
   </rule>
   
   <!-- SQL Injection -->
-  <rule id="110004" level="6">
-     <if_sid>110000, 110001</if_sid>
-     <field name="raw_uri">=select%20|select+|insert%20|%20from%20|%20where%20|union%20|update%20|select |insert |from |where |union|union+|where+|xp_cmdshell|%2csleep|sysdate|nslookup|sqli|update%20|delete%20|drop%20|truncate%20|alter%20|create%20|sleep|update |delete |drop |truncate |alter |create </field>
+  <rule id="110003" level="6">
+     <if_sid>110000,110001,110002</if_sid>
+     <field name="raw_uri">=select%20|select+|insert%20|%20from%20|%20where%20|union%20|update%20|select |insert |from |where |union|union+|where+|xp_cmdshell|%2csleep|sysdate|nslookup|sqli|update%20|delete%20|drop%20|truncate%20|alter%20|create%20|sleep|update |delete |drop|1=1|truncate |alter |create|id=|user=</field>
      
      <description>Possible SQL injection attempt.</description>
      <mitre>
@@ -54,8 +44,8 @@
   </rule>
   
   <!-- Path traversal -->
-  <rule id="110005" level="6">
-    <if_sid>110000, 110001</if_sid>
+  <rule id="110004" level="6">
+    <if_sid>110000,110001,110002</if_sid>
     <field name="raw_uri">%027|%00|%01|%7f|%2E%2E|%0A|%0D|../..|..\..|echo;|cmd.exe|root.exe|_mem_bin|msadc|/winnt/|/boot.ini|/x90/|default.ida|/sumthin|nsiislog.dll|chmod%|wget%|cd%20|exec%20|../..//|%5C../%5C|././././|2e%2e%5c%2e|%5C%5C|etc|passwd|echo</field>
     
     <description>Possible path traversal attempt</description>
@@ -68,8 +58,8 @@
   </rule>
   
   <!-- XSS Rule -->
-  <rule id="110006" level="6"> 
-    <if_sid>110000, 110001</if_sid>
+  <rule id="110005" level="6"> 
+    <if_sid>110000,110001,110002</if_sid>
     <field name="raw_uri">%3Cscript|%3C%2Fscript|script>|script%3E|SRC=javascript|IMG%20|%20ONLOAD=|INPUT%20|iframe%20|javascript:|alert\(|document.cookie|IMG%20SRC=X%20ONERROR=</field>
     <description>Possible XSS (Cross Site Scripting) attempt.</description>
     <mitre>
@@ -79,8 +69,8 @@
   </rule>
   
   <!-- Sensitive File -->
-  <rule id="110007" level="7">
-    <if_sid>110000, 110001</if_sid>
+  <rule id="110006" level="7">
+    <if_sid>110000,110001,110002</if_sid>
     <field name="raw_uri">.env|.git|.htaccess|.htpasswd|wp-config|.php|.bak|.old|.backup|.sql|.tar|.zip|.config|.aspx|.asmx|.ascx|.dll|.exe|.asp</field>
     <description>Sensitive File Access Attempt</description>
     <mitre>
@@ -90,8 +80,8 @@
   </rule>
 
   <!-- WordPress Scan -->
-  <rule id="11008" level="6">
-    <if_sid>110000, 110001</if_sid>
+  <rule id="110007" level="6">
+    <if_sid>110000, 110001, 110002</if_sid>
     <field name="raw_uri">wp-login.php|wp-admin|wp-includes|wp-content|xmlrpc.php|readme.html|license.txt|wp-config</field>
     
     <description>Possible WordPress scan or access attempt</description>
@@ -100,22 +90,10 @@
     </mitre>
     <group>attack,web,wordpress,scan,config_exposure</group>
   </rule>
-
-  <!-- Crawler Detected -->
-  <rule id="11009" level="7">
-    <if_sid>110000, 110001</if_sid>
-    <field name="user_agent">gobuster|wfuzz|nikto|dirb|sqlmap|nmap|curl|python-requests|ZmEu|HTTrack|Wget|DirBuster|Burp|OWASP ZAP|java|Go-http-client|libwww-perl</field>
-    
-    <description>Possible crawler detected: $(user_agent)</description>
-    <mitre>
-      <id>T1190</id>
-    </mitre>
-    <group>attack,web,scanner,crawler</group>
-  </rule>
   
   <!-- Reverse Shell Detection -->
-  <rule id="110010" level="8">
-    <if_sid>110000,110001,11009</if_sid>
+  <rule id="110008" level="8">
+    <if_sid>110000,110001,110002</if_sid>
     <field name="raw_uri">bash -i|/bin/bash -i|nc -e|nc -c|perl -e|python -c|ruby -e|php -r|powershell -nop|powershell -w hidden|cmd.exe /c|.sh|.py</field>
     
     <description>Possible Reverse Shell attempt detected: $(uri) from $(srcip)</description>
@@ -128,8 +106,8 @@
   </rule>
   
   <!-- Shellshock Detection user_agent -->
-  <rule id="110011" level="8">
-    <if_sid>110000,110001,11009</if_sid>
+  <rule id="110009" level="8">
+    <if_sid>110000,110001,110002</if_sid>
     <field name="user_agent">{ :; };|()%20{%3A;%3B}%3B</field>
 
     <description>Possible Shellshock attack attempt detected from $(srcip)</description>
@@ -140,8 +118,8 @@
   </rule>
 
   <!-- Shellshock Detection Cookie -->
-  <rule id="110012" level="8">
-    <if_sid>110000,110001,11009</if_sid>
+  <rule id="110010" level="8">
+    <if_sid>110000,110001,110002</if_sid>
     <field name="cookie:">{ :; };|()%20{%3A;%3B}%3B</field>
 
     <description>Possible Shellshock attack attempt detected from $(srcip)</description>
@@ -152,8 +130,8 @@
   </rule>
   
   <!-- Shellshock Detection Referer -->
-  <rule id="110012" level="8">
-    <if_sid>110000,110001</if_sid>
+  <rule id="110011" level="8">
+    <if_sid>110000,110001, 110002</if_sid>
     <field name="referer">{ :; };|()%20{%3A;%3B}%3B</field>
 
     <description>Possible Shellshock attack attempt detected from $(srcip)</description>
@@ -170,8 +148,8 @@
   -->
   
   <!-- Multiple SQL Injection -->
-  <rule id="110013" level="10" frequency="8" timeframe="120">
-    <if_matched_sid>110004</if_matched_sid>
+  <rule id="110012" level="10" frequency="8" timeframe="120">
+    <if_matched_sid>110003</if_matched_sid>
     <same_source_ip />
     <description>Multiple SQL injection attempts from the same source ip $(srcip)</description>
     <mitre>
@@ -181,8 +159,8 @@
   </rule>
     
   <!-- Multiple Path traversal -->
-  <rule id="110014" level="10" frequency="8" timeframe="120">
-    <if_matched_sid>110005</if_matched_sid>
+  <rule id="110013" level="10" frequency="8" timeframe="120">
+    <if_matched_sid>110004</if_matched_sid>
     <same_source_ip />
     <description>Multiple path traversal attempts from same source ip $(srcip)</description>
     <description>source ip.</description>
@@ -194,8 +172,8 @@
   </rule>
   
   <!-- Multiple XSS -->
-  <rule id="110015" level="10" frequency="8" timeframe="120">
-    <if_matched_sid>110006</if_matched_sid>
+  <rule id="110014" level="10" frequency="8" timeframe="120">
+    <if_matched_sid>110005</if_matched_sid>
     <same_source_ip />
     <description>Multiple XSS (Cross Site Scripting) attempts from same source ip $(srcip)</description>
     <description>source ip.</description>
@@ -213,7 +191,7 @@
   -->
   
   <rule id="110016" level="6">
-    <if_sid>110004,110005,110006,110010</if_sid>
+    <if_sid>110003,110004,110005,110008,110009,110010,110011</if_sid>
     <field name="status_code">^200</field>
     
     <description>A web attack returned code 200 (success).</description>
@@ -221,5 +199,27 @@
       <id>T1055</id>
     </mitre>
     <group>attack,sql_injection,pci_dss_6.5,pci_dss_11.4,pci_dss_6.5.1,gdpr_IV_35.7.d,nist_800_53_SA.11,nist_800_53_SI.4,tsc_CC6.6,tsc_CC7.1,tsc_CC8.1,tsc_CC6.1,tsc_CC6.8,tsc_CC7.2,tsc_CC7.3,</group>
+  </rule>
+  
+  <!-- DoS -->
+  <rule id="110017" level="10" frequency="300" timeframe="60"> <!-- ANALISE BASEADA NA APLICAÇÃO 300 REQUISIÇÕES EM 1MIN VINDAS DO MESMO IP-->
+     <if_matched_group>web,</if_matched_group>
+     <same_source_ip />
+     <description>Possible DoS: more than 300 requests in 1 minute received from the same IP $(srcip)</description>
+     <mitre>
+        <id>T1499</id>
+    </mitre>
+    <group>attack,dos,gdpr_IV_35.7.d,nist_800_53_SI.4,tsc_CC6.6,tsc_CC7.1</group>
+  </rule>
+  
+  <!-- DDoS -->
+  <rule id="110018" level="12" frequency="1000" timeframe="60"> <!-- ANALISE BASEADA NA APLICAÇÃO 1000 REQUISIÇÕES EM 1MIN VINDAS DO MESMO IP-->
+     <if_matched_group>web,</if_matched_group>
+     <different_srcip />
+     <description>Possible DDoS: more than 1000 requests in 1 minute received from multiple IPs targeting the same resource</description>
+     <mitre>
+        <id>T1499.001</id>
+    </mitre>
+    <group>attack,ddos,gdpr_IV_35.7.d,nist_800_53_SI.4,tsc_CC6.6,tsc_CC7.1</group>
   </rule>
 </group>

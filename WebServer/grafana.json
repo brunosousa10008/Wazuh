@@ -24,7 +24,7 @@
     {
       "datasource": {
         "type": "grafana-opensearch-datasource",
-        "uid": "devx5cgmb4we8d"
+        "uid": "eew29scniwr9cb"
       },
       "fieldConfig": {
         "defaults": {
@@ -119,7 +119,7 @@
               "type": "count"
             }
           ],
-          "query": "rule.id: 110004",
+          "query": "rule.id:110003 OR rule.id:110012",
           "queryType": "lucene",
           "refId": "A",
           "timeField": "timestamp"
@@ -149,7 +149,7 @@
               "type": "count"
             }
           ],
-          "query": "rule.id: 110005",
+          "query": "rule.id:110004 OR rule.id:110013",
           "queryType": "lucene",
           "refId": "B",
           "timeField": "timestamp"
@@ -179,7 +179,7 @@
               "type": "count"
             }
           ],
-          "query": "rule.id: 110006",
+          "query": "rule.id:110005 OR rule.id:110014",
           "queryType": "lucene",
           "refId": "C",
           "timeField": "timestamp"
@@ -209,7 +209,7 @@
               "type": "count"
             }
           ],
-          "query": "rule.id: 110010",
+          "query": "rule.id: 110008",
           "queryType": "lucene",
           "refId": "D",
           "timeField": "timestamp"
@@ -239,7 +239,7 @@
               "type": "count"
             }
           ],
-          "query": "rule.id: 11009",
+          "query": "rule.id: 110002",
           "queryType": "lucene",
           "refId": "E",
           "timeField": "timestamp"
@@ -262,7 +262,7 @@
     {
       "datasource": {
         "type": "grafana-opensearch-datasource",
-        "uid": "devx5cgmb4we8d"
+        "uid": "eew29scniwr9cb"
       },
       "fieldConfig": {
         "defaults": {
@@ -357,7 +357,7 @@
               "type": "count"
             }
           ],
-          "query": "rule.id: 110004",
+          "query": "rule.id:110003 OR rule.id:110012",
           "queryType": "lucene",
           "refId": "A",
           "timeField": "timestamp"
@@ -387,7 +387,7 @@
               "type": "count"
             }
           ],
-          "query": "rule.id: 110005",
+          "query": "rule.id:110004 OR rule.id:110013",
           "queryType": "lucene",
           "refId": "B",
           "timeField": "timestamp"
@@ -417,7 +417,7 @@
               "type": "count"
             }
           ],
-          "query": "rule.id: 110006",
+          "query": "rule.id:110005 OR rule.id:110014",
           "queryType": "lucene",
           "refId": "C",
           "timeField": "timestamp"
@@ -447,7 +447,7 @@
               "type": "count"
             }
           ],
-          "query": "rule.id: 110007",
+          "query": "rule.id:110006",
           "queryType": "lucene",
           "refId": "D",
           "timeField": "timestamp"
@@ -477,7 +477,7 @@
               "type": "count"
             }
           ],
-          "query": "rule.id: 110008",
+          "query": "rule.id:110007",
           "queryType": "lucene",
           "refId": "E",
           "timeField": "timestamp"
@@ -507,7 +507,7 @@
               "type": "count"
             }
           ],
-          "query": "rule.id: 110009",
+          "query": "rule.id:110002",
           "queryType": "lucene",
           "refId": "F",
           "timeField": "timestamp"
@@ -537,7 +537,7 @@
               "type": "count"
             }
           ],
-          "query": "rule.id: 110010",
+          "query": "rule.id:110008",
           "queryType": "lucene",
           "refId": "G",
           "timeField": "timestamp"
@@ -567,7 +567,7 @@
               "type": "count"
             }
           ],
-          "query": "rule.id: 110011",
+          "query": "rule.id:110009 OR rule.id:110010 OR rule.id:110011",
           "queryType": "lucene",
           "refId": "H",
           "timeField": "timestamp"
@@ -590,7 +590,7 @@
     {
       "datasource": {
         "type": "grafana-opensearch-datasource",
-        "uid": "devx5cgmb4we8d"
+        "uid": "eew29scniwr9cb"
       },
       "fieldConfig": {
         "defaults": {
@@ -744,7 +744,7 @@
     {
       "datasource": {
         "type": "grafana-opensearch-datasource",
-        "uid": "devx5cgmb4we8d"
+        "uid": "eew29scniwr9cb"
       },
       "fieldConfig": {
         "defaults": {
@@ -840,7 +840,7 @@
               "type": "count"
             }
           ],
-          "query": "rule.groups: \"web\" AND rule.id: 110002",
+          "query": "rule.groups: \"web\" AND rule.id: 110017",
           "queryType": "lucene",
           "refId": "A",
           "timeField": "timestamp"
@@ -870,7 +870,7 @@
               "type": "count"
             }
           ],
-          "query": "rule.groups: \"web\" AND rule.id: 110003",
+          "query": "rule.groups: \"web\" AND rule.id: 110018",
           "queryType": "lucene",
           "refId": "B",
           "timeField": "timestamp"
@@ -893,7 +893,7 @@
     {
       "datasource": {
         "type": "grafana-opensearch-datasource",
-        "uid": "devx5cgmb4we8d"
+        "uid": "eew29scniwr9cb"
       },
       "fieldConfig": {
         "defaults": {
@@ -1102,7 +1102,7 @@
     {
       "datasource": {
         "type": "grafana-opensearch-datasource",
-        "uid": "devx5cgmb4we8d"
+        "uid": "eew29scniwr9cb"
       },
       "fieldConfig": {
         "defaults": {
@@ -1205,7 +1205,7 @@
               "type": "count"
             }
           ],
-          "query": "rule.id: 11009",
+          "query": "rule.id: 110002",
           "queryType": "lucene",
           "refId": "A",
           "timeField": "timestamp"
@@ -1244,7 +1244,7 @@
       },
       "gridPos": {
         "h": 2,
-        "w": 9,
+        "w": 7,
         "x": 0,
         "y": 24
       },
@@ -1334,8 +1334,8 @@
       },
       "gridPos": {
         "h": 2,
-        "w": 15,
-        "x": 9,
+        "w": 10,
+        "x": 7,
         "y": 24
       },
       "id": 6,
@@ -1397,8 +1397,177 @@
     },
     {
       "datasource": {
+        "type": "datasource",
+        "uid": "-- Dashboard --"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 5,
+        "x": 17,
+        "y": 24
+      },
+      "id": 15,
+      "options": {
+        "SVGBaseFix": true,
+        "add100Percentage": true,
+        "calcsMutation": "standard",
+        "centerAlignContent": true,
+        "codeData": "{\n  \"text\": \"Random text\"\n}",
+        "css": "h2 {\r\n    margin-bottom: 10px;\r\n    color: #B6BED1;\r\n    font-weight: 600;\r\n    font-size: 1rem;\r\n    background-color: #102432;\r\n    padding: 1rem 2rem 0rem 2rem;\r\n    border-radius: 5px;\r\n}",
+        "dynamicData": false,
+        "dynamicFieldDisplayValues": false,
+        "dynamicHtmlGraphics": false,
+        "dynamicProps": false,
+        "html": "<h2>WEB ATTACK(SUCCESS)</h2>",
+        "onInit": "// Sets the text from customProperties\nconst htmlgraphicsText = htmlNode.getElementById('htmlgraphics-text');\n\nif (htmlgraphicsText) {\n  htmlgraphicsText.textContent = customProperties.text;\n\n  // Change the text color based on the theme\n  if (theme.isDark) {\n    htmlgraphicsText.style.color = 'green';\n  } else {\n    htmlgraphicsText.style.color = 'red';\n  }\n}\n",
+        "onInitOnResize": false,
+        "onRender": "",
+        "overflow": "visible",
+        "panelupdateOnMount": true,
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull",
+            "last",
+            "firstNotNull",
+            "first",
+            "min",
+            "max",
+            "mean",
+            "sum",
+            "count",
+            "range",
+            "delta",
+            "step",
+            "diff",
+            "logmin",
+            "allIsZero",
+            "allIsNull",
+            "diffperc"
+          ]
+        },
+        "renderOnMount": true,
+        "rootCSS": "",
+        "useGrafanaScrollbar": false
+      },
+      "pluginVersion": "2.2.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "datasource",
+            "uid": "-- Dashboard --"
+          },
+          "refId": "A"
+        }
+      ],
+      "title": "",
+      "transparent": true,
+      "type": "gapit-htmlgraphics-panel"
+    },
+    {
+      "datasource": {
         "type": "grafana-opensearch-datasource",
-        "uid": "devx5cgmb4we8d"
+        "uid": "eew29scniwr9cb"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-red",
+                "value": 0
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 22,
+        "y": 24
+      },
+      "id": 13,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "sum"
+          ],
+          "fields": "/^Count$/",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "value",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.1.1",
+      "targets": [
+        {
+          "alias": "",
+          "bucketAggs": [
+            {
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "format": "table",
+          "luceneQueryType": "Metric",
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.id: 110016",
+          "queryType": "lucene",
+          "refId": "A",
+          "timeField": "timestamp"
+        }
+      ],
+      "title": "",
+      "transparent": true,
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "grafana-opensearch-datasource",
+        "uid": "eew29scniwr9cb"
       },
       "fieldConfig": {
         "defaults": {
@@ -1457,7 +1626,7 @@
             "properties": [
               {
                 "id": "custom.width",
-                "value": 207
+                "value": 113
               }
             ]
           }
@@ -1465,7 +1634,7 @@
       },
       "gridPos": {
         "h": 10,
-        "w": 9,
+        "w": 7,
         "x": 0,
         "y": 26
       },
@@ -1481,7 +1650,7 @@
           ],
           "show": false
         },
-        "showHeader": false,
+        "showHeader": true,
         "sortBy": []
       },
       "pluginVersion": "12.1.1",
@@ -1536,7 +1705,7 @@
     {
       "datasource": {
         "type": "grafana-opensearch-datasource",
-        "uid": "devx5cgmb4we8d"
+        "uid": "eew29scniwr9cb"
       },
       "fieldConfig": {
         "defaults": {
@@ -1587,7 +1756,7 @@
               },
               {
                 "color": "dark-red",
-                "value": 2500
+                "value": 3000
               }
             ]
           }
@@ -1596,8 +1765,8 @@
       },
       "gridPos": {
         "h": 10,
-        "w": 15,
-        "x": 9,
+        "w": 10,
+        "x": 7,
         "y": 26
       },
       "id": 5,
@@ -1609,7 +1778,7 @@
           ],
           "displayMode": "table",
           "placement": "bottom",
-          "showLegend": false
+          "showLegend": true
         },
         "timezone": [
           "browser"
@@ -1651,6 +1820,124 @@
       "title": "",
       "transparent": true,
       "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "grafana-opensearch-datasource",
+        "uid": "eew29scniwr9cb"
+      },
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 7,
+        "x": 17,
+        "y": 26
+      },
+      "id": 14,
+      "options": {
+        "dedupStrategy": "none",
+        "enableInfiniteScrolling": false,
+        "enableLogDetails": true,
+        "prettifyLogMessage": false,
+        "showCommonLabels": false,
+        "showLabels": false,
+        "showTime": false,
+        "sortOrder": "Descending",
+        "wrapLogMessage": false
+      },
+      "pluginVersion": "12.1.1",
+      "targets": [
+        {
+          "alias": "",
+          "bucketAggs": [
+            {
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "format": "table",
+          "luceneQueryType": "Logs",
+          "metrics": [
+            {
+              "id": "1",
+              "type": "logs"
+            }
+          ],
+          "query": "rule.id: 110016",
+          "queryType": "lucene",
+          "refId": "A",
+          "timeField": "timestamp"
+        }
+      ],
+      "title": "",
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {},
+            "includeByName": {},
+            "indexByName": {
+              "@timestamp": 3,
+              "_id": 4,
+              "_index": 5,
+              "_source": 6,
+              "_type": 7,
+              "agent.id": 8,
+              "agent.ip": 9,
+              "agent.name": 10,
+              "data.cookie": 11,
+              "data.dstip": 12,
+              "data.dstport": 13,
+              "data.full_url": 0,
+              "data.hostname": 14,
+              "data.method": 15,
+              "data.raw_uri": 16,
+              "data.referer": 17,
+              "data.response_time_sec": 18,
+              "data.response_time_usec": 19,
+              "data.site": 20,
+              "data.size": 21,
+              "data.srcip": 22,
+              "data.status_code": 23,
+              "data.time": 24,
+              "data.uri": 25,
+              "data.user_agent": 26,
+              "data.web_server": 27,
+              "data.x_forwarded_for": 28,
+              "decoder.name": 29,
+              "full_log": 30,
+              "id": 31,
+              "input.type": 32,
+              "level": 33,
+              "location": 34,
+              "manager.name": 35,
+              "rule.description": 2,
+              "rule.firedtimes": 36,
+              "rule.gdpr": 37,
+              "rule.groups": 38,
+              "rule.id": 39,
+              "rule.mail": 40,
+              "rule.mitre.id": 41,
+              "rule.mitre.tactic": 42,
+              "rule.mitre.technique": 43,
+              "rule.nist_800_53": 44,
+              "rule.pci_dss": 45,
+              "rule.tsc": 46,
+              "timestamp": 1
+            },
+            "renameByName": {}
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "logs"
     }
   ],
   "preload": false,
@@ -1663,12 +1950,12 @@
     "list": []
   },
   "time": {
-    "from": "now-1m",
+    "from": "now-3h",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "browser",
   "title": "Web Attack 01",
   "uid": "86996ca0-69d0-4d18-bc58-d19150ee56a6",
-  "version": 261
+  "version": 34
 }
