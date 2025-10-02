@@ -1,0 +1,3524 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 60,
+  "links": [],
+  "panels": [
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 18,
+      "panels": [],
+      "title": "Principal Dashboard",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "alexanderzobnin-zabbix-datasource",
+        "uid": "dekod5rt8dd6oc"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 24,
+        "x": 0,
+        "y": 1
+      },
+      "id": 1,
+      "options": {
+        "SVGBaseFix": true,
+        "add100Percentage": true,
+        "calcsMutation": "standard",
+        "centerAlignContent": true,
+        "codeData": "{\n  \"text\": \"Random text\"\n}",
+        "css": ".title{\n  display:flex;\n  flex-direction: row;\n  align-items:center;\n  gap:18px;\n}\n\n.logo img{\n  width:56px;\n  height:56px;\n}",
+        "dynamicData": false,
+        "dynamicFieldDisplayValues": false,
+        "dynamicHtmlGraphics": false,
+        "dynamicProps": false,
+        "html": "<div class=\"title\">\n  <div class=\"logo\">\n    <img src=\"https://youit.com.br/wp-content/uploads/2022/06/fortinet.svg\">\n  </div>\n  <div>\n    <h1>GrupoNew • FortiGate Attack 01 - MITRE ATT&CK</h1>\n  </div>\n</div>",
+        "onInit": "// Sets the text from customProperties\nconst htmlgraphicsText = htmlNode.getElementById('htmlgraphics-text');\n\nif (htmlgraphicsText) {\n  htmlgraphicsText.textContent = customProperties.text;\n\n  // Change the text color based on the theme\n  if (theme.isDark) {\n    htmlgraphicsText.style.color = 'green';\n  } else {\n    htmlgraphicsText.style.color = 'red';\n  }\n}\n",
+        "onInitOnResize": false,
+        "onRender": "",
+        "overflow": "visible",
+        "panelupdateOnMount": true,
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull",
+            "last",
+            "firstNotNull",
+            "first",
+            "min",
+            "max",
+            "mean",
+            "sum",
+            "count",
+            "range",
+            "delta",
+            "step",
+            "diff",
+            "logmin",
+            "allIsZero",
+            "allIsNull",
+            "diffperc"
+          ]
+        },
+        "renderOnMount": true,
+        "rootCSS": ":root{\r\n  --bg:#07070a;\r\n  --panel:#0f1115cc;\r\n  --glass: rgba(255,255,255,0.03);\r\n  --accent-a: #bc3813;\r\n  --accent-b: #7b61ff;\r\n  --danger: #ff6b6b;\r\n  --success: #49e07a;\r\n  --muted: #9aa3b2;\r\n  --glass-border: rgba(255,255,255,0.06);\r\n  --neon: 0 10px 40px rgba(123,97,255,0.12), 0 2px 6px rgba(122,252,255,0.04);\r\n  font-family: Inter, ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial;\r\n}\r\n\r\nhtml, body {\r\n  background: \r\n    radial-gradient(110% 60% at 10% 10%, rgba(122,252,255,0.04), transparent),\r\n    radial-gradient(100% 50% at 90% 90%, rgba(77, 22, 7, 0.5), transparent),\r\n    var(--bg);\r\n  background-repeat: no-repeat;\r\n  background-size: cover;\r\n  background-attachment: fixed;\r\n  color: #e6eef8;\r\n  -webkit-font-smoothing:antialiased;\r\n  -moz-osx-font-smoothing:grayscale;\r\n  min-height: 100vh;\r\n  margin: 0;\r\n}",
+        "useGrafanaScrollbar": true
+      },
+      "pluginVersion": "2.2.1",
+      "targets": [
+        {
+          "application": {
+            "filter": ""
+          },
+          "countTriggersBy": "",
+          "evaltype": "0",
+          "functions": [],
+          "group": {
+            "filter": ""
+          },
+          "host": {
+            "filter": ""
+          },
+          "item": {
+            "filter": ""
+          },
+          "itemTag": {
+            "filter": ""
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": false,
+            "disableDataAlignment": false,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": false
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          }
+        }
+      ],
+      "title": "",
+      "transparent": true,
+      "type": "gapit-htmlgraphics-panel"
+    },
+    {
+      "datasource": {
+        "type": "grafana-opensearch-datasource",
+        "uid": "feuw803e5agowf"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 17,
+        "w": 12,
+        "x": 0,
+        "y": 4
+      },
+      "id": 3,
+      "options": {
+        "SVGBaseFix": true,
+        "add100Percentage": true,
+        "calcsMutation": "standard",
+        "centerAlignContent": true,
+        "codeData": "{\n  \"text\": \"Random text\"\n}",
+        "css": "main {\n    line-height: 1;\n    color: var(--text);\n    font: 12px / 1.4 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, \"Apple Color Emoji\", \"Segoe UI Emoji\";\n    height: 100%;\n}\n\nmain .kpis {\n    display: grid;\n    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));  /* Colunas mais estreitas */\n    gap: 12px;  /* Diminuí o espaçamento entre os itens */\n    margin: 16px 0;  /* Diminuí a margem superior e inferior */\n}\n\nmain .category {\n    background: #1c1c1c;  /* Fundo escuro com leve nuance de cinza */\n    border-radius: 8px;  /* Diminuí o raio das bordas */\n    border: 1px solid #3a3a3a;\n    padding: 8px;  /* Reduzi o padding */\n    display: flex;\n    flex-direction: column;\n    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Sombra suave para destacar a categoria */\n}\n\nmain .category-header {\n    font-size: 18px;  /* Reduzi mais o tamanho da fonte */\n    font-weight: 600;\n    color: #f4a261;  /* Dourado para o título */\n    margin-bottom: 6px;  /* Diminuí ainda mais o espaço abaixo do título */\n    text-transform: uppercase;\n    letter-spacing: 0.8px;\n}\n\nmain .category-content {\n    display: flex;\n    flex-direction: column;\n    gap: 8px;  /* Reduzi o espaço entre os KPIs */\n}\n\nmain .kpi {\n    background: #660000;  /* Um tom mais escuro de vermelho para os KPIs */\n    padding: 8px;  /* Reduzi o padding dos KPIs */\n    border-radius: 6px;  /* Raio das bordas dos KPIs ajustado */\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n}\n\nmain .kpi .label {\n    font-size: 16px;  /* Diminuí ainda mais o tamanho da fonte da label */\n    color: #b0c4de;  /* Cor clara para o texto das labels */\n    text-transform: uppercase;\n    letter-spacing: 0.5px;\n}\n\nmain .kpi .value {\n    font-size: 18px;  /* Diminuí o tamanho do valor */\n    font-weight: 700;\n    margin-top: 4px;\n    color: #fff;  /* Cor branca para o valor */\n}\n",
+        "dynamicData": false,
+        "dynamicFieldDisplayValues": false,
+        "dynamicHtmlGraphics": false,
+        "dynamicProps": false,
+        "html": "<main>\n    <section class=\"kpis\">\n        <!-- AntiVirus -->\n        <div class=\"category\">\n            <div class=\"category-header\">AntiVirus</div>\n            <div class=\"category-content\">\n                <div class=\"kpi\">\n                    <div class=\"label\">0 Day</div>\n                    <div id=\"kpi-av-0day\" class=\"value\">null</div>\n                </div>\n                <div class=\"kpi\">\n                    <div class=\"label\">Infected</div>\n                    <div id=\"kpi-av-infected\" class=\"value\">null</div>\n                </div>\n                <div class=\"kpi\">\n                    <div class=\"label\">Malware List</div>\n                    <div id=\"kpi-av-malware\" class=\"value\">null</div>\n                </div>\n                <div class=\"kpi\">\n                    <div class=\"label\">Others</div>\n                    <div id=\"kpi-av-others\" class=\"value\">null</div>\n                </div>\n            </div>\n        </div>\n\n        <!-- WebFilter -->\n        <div class=\"category\">\n            <div class=\"category-header\">WebFilter</div>\n            <div class=\"category-content\">\n                <div class=\"kpi\">\n                    <div class=\"label\">Pornography</div>\n                    <div id=\"kpi-wb-pornography\" class=\"value\">null</div>\n                </div>\n                <div class=\"kpi\">\n                    <div class=\"label\">Gambling</div>\n                    <div id=\"kpi-wb-gambling\" class=\"value\">null</div>\n                </div>\n                <div class=\"kpi\">\n                    <div class=\"label\">Phishing</div>\n                    <div id=\"kpi-wb-phishing\" class=\"value\">null</div>\n                </div>\n                <div class=\"kpi\">\n                    <div class=\"label\">Crypto Mining</div>\n                    <div id=\"kpi-wb-cryptomining\" class=\"value\">null</div>\n                </div>\n                <div class=\"kpi\">\n                    <div class=\"label\">Extremist Groups</div>\n                    <div id=\"kpi-wb-extremistgroups\" class=\"value\">null</div>\n                </div>\n                <div class=\"kpi\">\n                    <div class=\"label\">Games</div>\n                    <div id=\"kpi-wb-games\" class=\"value\">null</div>\n                </div>\n                <div class=\"kpi\">\n                    <div class=\"label\">Others</div>\n                    <div id=\"kpi-wb-others\" class=\"value\">null</div>\n                </div>\n            </div>\n        </div>\n\n        <!-- App Control -->\n        <div class=\"category\">\n            <div class=\"category-header\">App Control</div>\n            <div class=\"category-content\">\n                <div class=\"kpi\">\n                    <div class=\"label\">Game</div>\n                    <div id=\"kpi-ac-game\" class=\"value\">null</div>\n                </div>\n                <div class=\"kpi\">\n                    <div class=\"label\">P2P</div>\n                    <div id=\"kpi-ac-p2p\" class=\"value\">null</div>\n                </div>\n                <div class=\"kpi\">\n                    <div class=\"label\">Proxy</div>\n                    <div id=\"kpi-ac-proxy\" class=\"value\">null</div>\n                </div>\n                <div class=\"kpi\">\n                    <div class=\"label\">Others</div>\n                    <div id=\"kpi-ac-others\" class=\"value\">null</div>\n                </div>\n            </div>\n        </div>\n\n        <!-- WAF -->\n        <div class=\"category\">\n            <div class=\"category-header\">WAF</div>\n            <div class=\"category-content\">\n                <div class=\"kpi\">\n                    <div class=\"label\">Waf Address List</div>\n                    <div id=\"kpi-waf-adl\" class=\"value\">null</div>\n                </div>\n                <div class=\"kpi\">\n                    <div class=\"label\">waf custom signature</div>\n                    <div id=\"kpi-waf-cs\" class=\"value\">null</div>\n                </div>\n                <div class=\"kpi\">\n                    <div class=\"label\">waf http constraint</div>\n                    <div id=\"kpi-waf-hc\" class=\"value\">null</div>\n                </div>\n                <div class=\"kpi\">\n                    <div class=\"label\">waf http method</div>\n                    <div id=\"kpi-waf-hm\" class=\"value\">null</div>\n                </div>\n                <div class=\"kpi\">\n                    <div class=\"label\">waf signature</div>\n                    <div id=\"kpi-waf-s\" class=\"value\">null</div>\n                </div>\n                <div class=\"kpi\">\n                    <div class=\"label\">waf url access</div>\n                    <div id=\"kpi-waf-ua\" class=\"value\">null</div>\n                </div>\n            </div>\n        </div>\n\n        <!-- IPS -->\n        <div class=\"category\">\n            <div class=\"category-header\">IPS</div>\n            <div class=\"category-content\">\n                <div class=\"kpi\">\n                    <div class=\"label\">botnet</div>\n                    <div id=\"kpi-ips-botnet\" class=\"value\">null</div>\n                </div>\n                <div class=\"kpi\">\n                    <div class=\"label\">malicious-url</div>\n                    <div id=\"kpi-ips-maliciousurl\" class=\"value\">null</div>\n                </div>\n                <div class=\"kpi\">\n                    <div class=\"label\">signature</div>\n                    <div id=\"kpi-ips-signature\" class=\"value\">null</div>\n                </div>\n                <div class=\"kpi\">\n                    <div class=\"label\">Anomaly</div>\n                    <div id=\"kpi-anomaly-anomaly\" class=\"value\">null</div>\n                </div>\n            </div>\n        </div>\n    </section>\n</main>\n",
+        "onInit": "",
+        "onInitOnResize": false,
+        "onRender": "const valuesAttackers = data.series[0].fields[1].values;\n\n// Mapeia os IDs dos elementos com os índices correspondentes\nconst kpiMap = [\"kpi-av-0day\", \"kpi-av-infected\", \"kpi-av-malware\", \"kpi-av-others\",\"kpi-wb-pornography\",\"kpi-wb-gambling\",\"kpi-wb-phishing\",\"kpi-wb-cryptomining\",\"kpi-wb-extremistgroups\",\"kpi-wb-games\",\"kpi-wb-others\",\"kpi-ac-game\",\"kpi-ac-p2p\",\"kpi-ac-proxy\",\"kpi-ac-others\",\"kpi-waf-adl\",\"kpi-waf-cs\",\"kpi-waf-hc\",\"kpi-waf-hm\",\"kpi-waf-s\",\"kpi-waf-ua\",\"kpi-ips-botnet\",\"kpi-ips-maliciousurl\",\"kpi-ips-signature\",\"kpi-anomaly-anomaly\"];\n\n// Atualiza os elementos dinamicamente\nkpiMap.forEach((id, index) => {\n  const element = htmlNode.getElementById(id);\n  if (element) {\n    element.innerText = valuesAttackers[index] ?? 0;\n  }\n});",
+        "overflow": "visible",
+        "panelupdateOnMount": true,
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull",
+            "last",
+            "firstNotNull",
+            "first",
+            "min",
+            "max",
+            "mean",
+            "sum",
+            "count",
+            "range",
+            "delta",
+            "step",
+            "diff",
+            "logmin",
+            "allIsZero",
+            "allIsNull",
+            "diffperc"
+          ]
+        },
+        "renderOnMount": true,
+        "rootCSS": "",
+        "useGrafanaScrollbar": true
+      },
+      "pluginVersion": "2.2.1",
+      "targets": [
+        {
+          "alias": "av-0day",
+          "bucketAggs": [
+            {
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "feuw803e5agowf"
+          },
+          "format": "table",
+          "hide": false,
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.groups:\"fwfortigate\" AND data.devname:$devname AND data.srcip:$srcip AND data.kind:\"virus\" AND data.eventtype:\"0-day-malware-stream\"",
+          "queryType": "lucene",
+          "refId": "A",
+          "timeField": "timestamp"
+        },
+        {
+          "alias": "av-infected",
+          "bucketAggs": [
+            {
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "feuw803e5agowf"
+          },
+          "format": "table",
+          "hide": false,
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.groups:\"fwfortigate\" AND data.devname:$devname AND data.srcip:$srcip AND data.kind:\"virus\" AND data.eventtype:\"infected\"",
+          "queryType": "lucene",
+          "refId": "B",
+          "timeField": "timestamp"
+        },
+        {
+          "alias": "av-malware",
+          "bucketAggs": [
+            {
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "feuw803e5agowf"
+          },
+          "format": "table",
+          "hide": false,
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.groups:\"fwfortigate\" AND data.devname:$devname AND data.srcip:$srcip AND data.kind:\"virus\" AND data.eventtype:\"malware-list\"",
+          "queryType": "lucene",
+          "refId": "C",
+          "timeField": "timestamp"
+        },
+        {
+          "alias": "av-other",
+          "bucketAggs": [
+            {
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "feuw803e5agowf"
+          },
+          "format": "table",
+          "hide": false,
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.groups:\"fwfortigate\" AND data.devname:$devname AND data.srcip:$srcip AND data.kind:\"virus\" AND NOT data.eventtype:\"0-day-malware-stream\" OR NOT data.eventtype:\"infected\" OR NOT data.eventtype:\"malware-list\"",
+          "queryType": "lucene",
+          "refId": "D",
+          "timeField": "timestamp"
+        },
+        {
+          "alias": "wb-pornography",
+          "bucketAggs": [
+            {
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "feuw803e5agowf"
+          },
+          "format": "table",
+          "hide": false,
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.groups:\"fwfortigate\" AND data.devname:$devname AND data.srcip:$srcip AND data.kind:\"webfilter\" AND data.catdesc:\"Pornography\"",
+          "queryType": "lucene",
+          "refId": "E",
+          "timeField": "timestamp"
+        },
+        {
+          "alias": "wb-gambling",
+          "bucketAggs": [
+            {
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "feuw803e5agowf"
+          },
+          "format": "table",
+          "hide": false,
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.groups:\"fwfortigate\" AND data.devname:$devname AND data.srcip:$srcip AND data.kind:\"webfilter\" AND data.catdesc:\"Gambling\"",
+          "queryType": "lucene",
+          "refId": "F",
+          "timeField": "timestamp"
+        },
+        {
+          "alias": "wb-phishing",
+          "bucketAggs": [
+            {
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "feuw803e5agowf"
+          },
+          "format": "table",
+          "hide": false,
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.groups:\"fwfortigate\" AND data.devname:$devname AND data.srcip:$srcip AND data.kind:\"webfilter\" AND data.catdesc:\"Phishing\" OR data.catdesc:\"Spam URLs\"",
+          "queryType": "lucene",
+          "refId": "G",
+          "timeField": "timestamp"
+        },
+        {
+          "alias": "wb-cryptomining",
+          "bucketAggs": [
+            {
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "feuw803e5agowf"
+          },
+          "format": "table",
+          "hide": false,
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.groups:\"fwfortigate\" AND data.devname:$devname AND data.srcip:$srcip AND data.kind:\"webfilter\" AND data.catdesc:\"Crypto Mining\"",
+          "queryType": "lucene",
+          "refId": "H",
+          "timeField": "timestamp"
+        },
+        {
+          "alias": "wb-extremistgroups",
+          "bucketAggs": [
+            {
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "feuw803e5agowf"
+          },
+          "format": "table",
+          "hide": false,
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.groups:\"fwfortigate\" AND data.devname:$devname AND data.srcip:$srcip AND data.kind:\"webfilter\" AND data.catdesc:\"Extremist Groups\"",
+          "queryType": "lucene",
+          "refId": "I",
+          "timeField": "timestamp"
+        },
+        {
+          "alias": "wb-games",
+          "bucketAggs": [
+            {
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "feuw803e5agowf"
+          },
+          "format": "table",
+          "hide": false,
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.groups:\"fwfortigate\" AND data.devname:$devname AND data.srcip:$srcip AND data.kind:\"webfilter\" AND data.catdesc:\"Games\"",
+          "queryType": "lucene",
+          "refId": "J",
+          "timeField": "timestamp"
+        },
+        {
+          "alias": "wb-others",
+          "bucketAggs": [
+            {
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "feuw803e5agowf"
+          },
+          "format": "table",
+          "hide": false,
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.groups:\"fwfortigate\" AND data.devname:$devname AND data.srcip:$srcip AND data.kind:\"webfilter\" AND NOT data.catdesc:(\"Pornography\" OR \"Other Adult Materials\" OR \"Child Sexual Abuse\" OR \"Nudity and Risque\" OR \"Sex Education\" OR \"Gambling\" OR \"Phishing\" OR \"Spam URLs\" OR \"Crypto Mining\" OR \"Extremist Groups\" OR \"Games\" OR \"Games\")",
+          "queryType": "lucene",
+          "refId": "K",
+          "timeField": "timestamp"
+        },
+        {
+          "alias": "ac-game",
+          "bucketAggs": [
+            {
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "feuw803e5agowf"
+          },
+          "format": "table",
+          "hide": false,
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.groups:\"fwfortigate\" AND data.devname:$devname AND data.srcip:$srcip AND data.kind:\"app-ctrl\" AND data.appcat:\"Game\"",
+          "queryType": "lucene",
+          "refId": "L",
+          "timeField": "timestamp"
+        },
+        {
+          "alias": "ac-game",
+          "bucketAggs": [
+            {
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "feuw803e5agowf"
+          },
+          "format": "table",
+          "hide": false,
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.groups:\"fwfortigate\" AND data.devname:$devname AND data.srcip:$srcip AND data.kind:\"app-ctrl\" AND data.appcat:\"P2P\"",
+          "queryType": "lucene",
+          "refId": "M",
+          "timeField": "timestamp"
+        },
+        {
+          "alias": "ac-game",
+          "bucketAggs": [
+            {
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "feuw803e5agowf"
+          },
+          "format": "table",
+          "hide": false,
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.groups:\"fwfortigate\" AND data.devname:$devname AND data.srcip:$srcip AND data.kind:\"app-ctrl\" AND data.appcat:\"Proxy\"",
+          "queryType": "lucene",
+          "refId": "N",
+          "timeField": "timestamp"
+        },
+        {
+          "alias": "ac-others",
+          "bucketAggs": [
+            {
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "feuw803e5agowf"
+          },
+          "format": "table",
+          "hide": false,
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.groups:\"fwfortigate\" AND data.devname:$devname AND data.srcip:$srcip AND data.kind:\"app-ctrl\" AND NOT data.appcat:(\"Game\" OR \"P2P\" OR \"Proxy\")",
+          "queryType": "lucene",
+          "refId": "O",
+          "timeField": "timestamp"
+        },
+        {
+          "alias": "waf-adl",
+          "bucketAggs": [
+            {
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "feuw803e5agowf"
+          },
+          "format": "table",
+          "hide": false,
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.groups:\"fwfortigate\" AND data.devname:$devname AND data.srcip:$srcip AND data.kind:\"waf\" AND data.eventtype:\"waf-address-list\"",
+          "queryType": "lucene",
+          "refId": "P",
+          "timeField": "timestamp"
+        },
+        {
+          "alias": "waf-cs",
+          "bucketAggs": [
+            {
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "feuw803e5agowf"
+          },
+          "format": "table",
+          "hide": false,
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.groups:\"fwfortigate\" AND data.devname:$devname AND data.srcip:$srcip AND data.kind:\"waf\" AND data.eventtype:\"waf-custom-signature\"",
+          "queryType": "lucene",
+          "refId": "Q",
+          "timeField": "timestamp"
+        },
+        {
+          "alias": "waf-hc",
+          "bucketAggs": [
+            {
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "feuw803e5agowf"
+          },
+          "format": "table",
+          "hide": false,
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.groups:\"fwfortigate\" AND data.devname:$devname AND data.srcip:$srcip AND data.kind:\"waf\" AND data.eventtype:\"waf-http-constraint\"",
+          "queryType": "lucene",
+          "refId": "R",
+          "timeField": "timestamp"
+        },
+        {
+          "alias": "waf-hm",
+          "bucketAggs": [
+            {
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "feuw803e5agowf"
+          },
+          "format": "table",
+          "hide": false,
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.groups:\"fwfortigate\" AND data.devname:$devname AND data.srcip:$srcip AND data.kind:\"waf\" AND data.eventtype:\"waf-http-method\"",
+          "queryType": "lucene",
+          "refId": "S",
+          "timeField": "timestamp"
+        },
+        {
+          "alias": "waf-s",
+          "bucketAggs": [
+            {
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "feuw803e5agowf"
+          },
+          "format": "table",
+          "hide": false,
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.groups:\"fwfortigate\" AND data.devname:$devname AND data.srcip:$srcip AND data.kind:\"waf\" AND data.eventtype:\"waf-signature\"",
+          "queryType": "lucene",
+          "refId": "T",
+          "timeField": "timestamp"
+        },
+        {
+          "alias": "waf-ua",
+          "bucketAggs": [
+            {
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "feuw803e5agowf"
+          },
+          "format": "table",
+          "hide": false,
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.groups:\"fwfortigate\" AND data.devname:$devname AND data.srcip:$srcip AND data.kind:\"waf\" AND data.eventtype:\"waf-url-access\"",
+          "queryType": "lucene",
+          "refId": "U",
+          "timeField": "timestamp"
+        },
+        {
+          "alias": "ips-botnet",
+          "bucketAggs": [
+            {
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "feuw803e5agowf"
+          },
+          "format": "table",
+          "hide": false,
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.groups:\"fwfortigate\" AND data.devname:$devname AND data.srcip:$srcip AND data.kind:\"ips\" AND data.eventtype:\"botnet\"",
+          "queryType": "lucene",
+          "refId": "V",
+          "timeField": "timestamp"
+        },
+        {
+          "alias": "ips-maliciousurl",
+          "bucketAggs": [
+            {
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "feuw803e5agowf"
+          },
+          "format": "table",
+          "hide": false,
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.groups:\"fwfortigate\" AND data.devname:$devname AND data.srcip:$srcip AND data.kind:\"ips\" AND data.eventtype:\"malicious-url\"",
+          "queryType": "lucene",
+          "refId": "W",
+          "timeField": "timestamp"
+        },
+        {
+          "alias": "ips-signature",
+          "bucketAggs": [
+            {
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "feuw803e5agowf"
+          },
+          "format": "table",
+          "hide": false,
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.groups:\"fwfortigate\" AND data.devname:$devname AND data.srcip:$srcip AND data.kind:\"ips\" AND data.eventtype:\"signature\"",
+          "queryType": "lucene",
+          "refId": "X",
+          "timeField": "timestamp"
+        },
+        {
+          "alias": "anomaly-anomaly",
+          "bucketAggs": [
+            {
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "feuw803e5agowf"
+          },
+          "format": "table",
+          "hide": false,
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.groups:\"fwfortigate\" AND data.devname:$devname AND data.srcip:$srcip AND data.kind:\"anomaly\" AND data.eventtype:\"anomaly\"",
+          "queryType": "lucene",
+          "refId": "Y",
+          "timeField": "timestamp"
+        }
+      ],
+      "title": "",
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "reducers": [
+              "sum"
+            ]
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "gapit-htmlgraphics-panel"
+    },
+    {
+      "datasource": {
+        "type": "grafana-opensearch-datasource",
+        "uid": "feuw803e5agowf"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "transparent",
+                "value": 0
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 17,
+        "w": 12,
+        "x": 12,
+        "y": 4
+      },
+      "id": 4,
+      "options": {
+        "basemap": {
+          "config": {},
+          "name": "Layer 0",
+          "type": "default"
+        },
+        "controls": {
+          "mouseWheelZoom": true,
+          "showAttribution": true,
+          "showDebug": false,
+          "showMeasure": false,
+          "showScale": false,
+          "showZoom": true
+        },
+        "layers": [
+          {
+            "config": {
+              "showLegend": true,
+              "style": {
+                "color": {
+                  "fixed": "dark-red"
+                },
+                "opacity": 0.5,
+                "rotation": {
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
+                  "fixed": 6,
+                  "max": 15,
+                  "min": 2
+                },
+                "symbol": {
+                  "fixed": "img/icons/unicons/exclamation-circle.svg",
+                  "mode": "fixed"
+                },
+                "symbolAlign": {
+                  "horizontal": "center",
+                  "vertical": "center"
+                },
+                "textConfig": {
+                  "fontSize": 12,
+                  "offsetX": 0,
+                  "offsetY": 0,
+                  "textAlign": "center",
+                  "textBaseline": "middle"
+                }
+              }
+            },
+            "filterData": {
+              "id": "byRefId",
+              "options": "C"
+            },
+            "location": {
+              "latitude": "GeoLocation.location.lat",
+              "longitude": "GeoLocation.location.lon",
+              "mode": "coords"
+            },
+            "name": "Attack",
+            "tooltip": true,
+            "type": "markers"
+          },
+          {
+            "config": {
+              "showLegend": true,
+              "style": {
+                "color": {
+                  "fixed": "super-light-red"
+                },
+                "opacity": 0.5,
+                "rotation": {
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
+                  "fixed": 6,
+                  "max": 10,
+                  "min": 5
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/x-mark.svg",
+                  "mode": "fixed"
+                },
+                "symbolAlign": {
+                  "horizontal": "center",
+                  "vertical": "center"
+                },
+                "text": {
+                  "fixed": "",
+                  "mode": "fixed"
+                },
+                "textConfig": {
+                  "fontSize": 12,
+                  "offsetX": 0,
+                  "offsetY": 0,
+                  "textAlign": "center",
+                  "textBaseline": "middle"
+                }
+              }
+            },
+            "filterData": {
+              "id": "byRefId",
+              "options": "B"
+            },
+            "location": {
+              "latitude": "GeoLocation.location.lat",
+              "longitude": "GeoLocation.location.lon",
+              "mode": "coords"
+            },
+            "name": "Deny",
+            "tooltip": true,
+            "type": "markers"
+          },
+          {
+            "config": {
+              "showLegend": true,
+              "style": {
+                "color": {
+                  "fixed": "dark-green"
+                },
+                "opacity": 0.4,
+                "rotation": {
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
+                  "fixed": 6,
+                  "max": 15,
+                  "min": 2
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/cross.svg",
+                  "mode": "fixed"
+                },
+                "symbolAlign": {
+                  "horizontal": "center",
+                  "vertical": "center"
+                },
+                "textConfig": {
+                  "fontSize": 12,
+                  "offsetX": 0,
+                  "offsetY": 0,
+                  "textAlign": "center",
+                  "textBaseline": "middle"
+                }
+              }
+            },
+            "filterData": {
+              "id": "byRefId",
+              "options": "A"
+            },
+            "location": {
+              "latitude": "GeoLocation.location.lat",
+              "longitude": "GeoLocation.location.lon",
+              "mode": "coords"
+            },
+            "name": "Allow",
+            "tooltip": true,
+            "type": "markers"
+          }
+        ],
+        "tooltip": {
+          "mode": "details"
+        },
+        "view": {
+          "allLayers": true,
+          "id": "zero",
+          "lat": 0,
+          "lon": 0,
+          "zoom": 1
+        }
+      },
+      "pluginVersion": "12.1.1",
+      "targets": [
+        {
+          "alias": "",
+          "bucketAggs": [
+            {
+              "field": "@timestamp",
+              "id": "3",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            }
+          ],
+          "format": "table",
+          "luceneQueryType": "Metric",
+          "metrics": [
+            {
+              "id": "1",
+              "type": "logs"
+            }
+          ],
+          "query": "rule.groups:\"fwfortigate\" AND data.devname:$devname AND data.srcip:$srcip AND data.action: \"accept\" ",
+          "queryType": "lucene",
+          "refId": "A",
+          "serviceMap": true,
+          "timeField": "timestamp"
+        },
+        {
+          "alias": "",
+          "bucketAggs": [
+            {
+              "field": "@timestamp",
+              "id": "3",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "feuw803e5agowf"
+          },
+          "format": "table",
+          "hide": false,
+          "luceneQueryType": "Metric",
+          "metrics": [
+            {
+              "id": "1",
+              "type": "logs"
+            }
+          ],
+          "query": "rule.groups:\"fwfortigate\" AND data.devname:$devname AND data.srcip:$srcip AND data.action: \"deny\"",
+          "queryType": "lucene",
+          "refId": "B",
+          "serviceMap": true,
+          "timeField": "timestamp"
+        },
+        {
+          "alias": "",
+          "bucketAggs": [
+            {
+              "field": "@timestamp",
+              "id": "3",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "feuw803e5agowf"
+          },
+          "format": "table",
+          "hide": false,
+          "luceneQueryType": "Metric",
+          "metrics": [
+            {
+              "id": "1",
+              "type": "logs"
+            }
+          ],
+          "query": "rule.groups:\"fwfortigate\" AND data.devname:$devname AND data.srcip:$srcip AND rule.level: [6 TO *]",
+          "queryType": "lucene",
+          "refId": "C",
+          "serviceMap": true,
+          "timeField": "timestamp"
+        }
+      ],
+      "title": "",
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {
+              "@timestamp": true,
+              "GeoLocation.location.lat": false,
+              "GeoLocation.location.lon": false,
+              "_id": true,
+              "_index": true,
+              "_source": true,
+              "_type": true,
+              "agent.id": true,
+              "agent.ip": true,
+              "agent.name": true,
+              "data.cookie": true,
+              "data.full_url": false,
+              "data.response_time_sec": false,
+              "data.response_time_usec": false,
+              "data.time": false,
+              "data.user_agent": true,
+              "id": true,
+              "input.type": true,
+              "rule.firedtimes": true,
+              "rule.groups": true,
+              "rule.id": true,
+              "rule.level": false,
+              "rule.mail": true,
+              "timestamp": false
+            },
+            "includeByName": {},
+            "indexByName": {
+              "@timestamp": 9,
+              "GeoLocation.city_name": 10,
+              "GeoLocation.country_name": 11,
+              "GeoLocation.location.lat": 12,
+              "GeoLocation.location.lon": 13,
+              "GeoLocation.region_name": 14,
+              "_id": 15,
+              "_index": 16,
+              "_source": 17,
+              "_type": 18,
+              "agent.id": 19,
+              "agent.ip": 20,
+              "agent.name": 21,
+              "data.cookie": 22,
+              "data.dstip": 3,
+              "data.dstport": 4,
+              "data.full_url": 23,
+              "data.hostname": 24,
+              "data.method": 25,
+              "data.raw_uri": 6,
+              "data.referer": 26,
+              "data.response_time_sec": 27,
+              "data.response_time_usec": 28,
+              "data.site": 5,
+              "data.size": 29,
+              "data.srcip": 2,
+              "data.status_code": 7,
+              "data.time": 30,
+              "data.uri": 31,
+              "data.user_agent": 32,
+              "data.web_server": 33,
+              "data.x_forwarded_for": 34,
+              "decoder.name": 35,
+              "full_log": 36,
+              "id": 37,
+              "input.type": 38,
+              "location": 39,
+              "manager.name": 40,
+              "rule.description": 8,
+              "rule.firedtimes": 41,
+              "rule.groups": 42,
+              "rule.id": 43,
+              "rule.level": 1,
+              "rule.mail": 44,
+              "timestamp": 0
+            },
+            "renameByName": {}
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "geomap"
+    },
+    {
+      "datasource": {
+        "type": "grafana-opensearch-datasource",
+        "uid": "feuw803e5agowf"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 12,
+        "w": 8,
+        "x": 0,
+        "y": 21
+      },
+      "id": 5,
+      "options": {
+        "SVGBaseFix": true,
+        "add100Percentage": true,
+        "calcsMutation": "standard",
+        "centerAlignContent": true,
+        "codeData": "{\n  \"text\": \"\"\n}",
+        "css": ".main {\n    display: flex;\n    align-items: center;\n    gap: 50px;\n    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));\n    border: 1px solid var(--glass-border);\n    border-radius: 16px;\n    box-shadow: 0 6px 30px rgba(2,6,23,0.6);\n    padding: 0.2rem 0rem 0.5rem 2rem;\n    color: white;\n}\nh2 {\n    margin-bottom: 10px;\n    color: #B6BED1;\n    font-weight: 600;\n    font-size: 1.2rem;\n}\n.pie-chart {\n    width: 150px;\n    height: 150px;\n    border-radius: 50%;\n    background: conic-gradient(\n        #590004 0deg 90deg,   /* DoS */\n        #3A0001 90deg 180deg, /* PTS */\n        #592500 270deg 360deg ,/* BruteForce */\n    );\n    box-shadow: 0 6px 15px rgba(0,0,0,0.1);\n    transition: all 0.3s ease;\n}\n\n/* Tabela */\ntable {\n    border-collapse: collapse;\n    font-size: 1rem;\n    text-align: left;\n}\n\nth, td {\n    padding: 8px 12px;\n    font-weight: bold;\n}\n\nth {\n    color: #B6BED1;\n    font-weight: 600;\n}\n\ntd:first-child {\n    width: 15px;\n    height: 15px;\n    border-radius: 50%;\n}\n\ntd:nth-child(2), td:nth-child(3) {\n    padding-left: 10px;\n}\n\ntr + tr td {\n    border-top: 1px solid #ddd;\n}",
+        "dynamicData": false,
+        "dynamicFieldDisplayValues": false,
+        "dynamicHtmlGraphics": false,
+        "dynamicProps": false,
+        "html": "<div class=\"main\">\n    <div>\n        <h2>COUNT ALERTS</h2>\n        <div class=\"pie-chart\" id=\"pieChart\"></div>\n    </div>\n\n\n    <table>\n        <thead>\n            <tr>\n                <th style=\"background-color: trasnpart; width: 10px; height: 10px;\"></th>\n                <th>Tipo</th>\n                <th>Quantidade</th>\n            </tr>\n        </thead>\n        <tbody>\n            <tr>\n                <td style=\"background-color: #590004; width: 10px; height: 10px;\"></td>\n                <td>DDoS/DoS</td>\n                <td id=\"dosValue\"></td>\n            </tr>\n            <tr>\n                <td style=\"background-color: #3A0001; width: 10px; height: 10px;\"></td>\n                <td>PortScan</td>\n                <td id=\"ddosValue\"></td>\n            </tr>\n            <tr>\n                <td style=\"background-color: #592500; width: 10px; height: 10px;\"></td>\n                <td>BruteForce</td>\n                <td id=\"ptsValue\"></td>\n            </tr>\n        </tbody>\n    </table>\n</div>",
+        "onInit": "",
+        "onInitOnResize": false,
+        "onRender": "// Pega os valores\nconst valuesAttackers = data.series[0].fields[1].values;\n\n// Valores individuais\nlet dos = valuesAttackers[0] || 0;   // DDoS/DoS\nlet pts = valuesAttackers[1] || 0;   // PortScan\nlet bt  = valuesAttackers[2] || 0;   // BruteForce\n\n// Calcular total\nconst total = dos + pts + bt;\n\n// Evitar divisão por zero\nconst dosAngle = total > 0 ? (dos / total) * 360 : 0;\nconst ptsAngle = total > 0 ? (pts / total) * 360 : 0;\nconst btAngle  = total > 0 ? (bt  / total) * 360 : 0;\n\n// Atualizar gráfico\nconst pieChart = htmlNode.getElementById('pieChart');\npieChart.style.background = `conic-gradient(\n    #590004 0deg ${dosAngle}deg,\n    #3A0001 ${dosAngle}deg ${dosAngle + ptsAngle}deg,\n    #220001 ${dosAngle + ptsAngle}deg 360deg\n)`;\n\n// Atualizar tabela\nhtmlNode.getElementById('dosValue').textContent = dos;\nhtmlNode.getElementById('ddosValue').textContent = pts;\nhtmlNode.getElementById('ptsValue').textContent  = bt;\n",
+        "overflow": "visible",
+        "panelupdateOnMount": true,
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull",
+            "last",
+            "firstNotNull",
+            "first",
+            "min",
+            "max",
+            "mean",
+            "sum",
+            "count",
+            "range",
+            "delta",
+            "step",
+            "diff",
+            "logmin",
+            "allIsZero",
+            "allIsNull",
+            "diffperc"
+          ]
+        },
+        "renderOnMount": true,
+        "rootCSS": "",
+        "useGrafanaScrollbar": false
+      },
+      "pluginVersion": "2.2.1",
+      "targets": [
+        {
+          "alias": "DoS",
+          "bucketAggs": [
+            {
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "feuw803e5agowf"
+          },
+          "format": "table",
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.groups: \"fwfortigate\" AND data.devname:$devname AND data.srcip:$srcip AND rule.id: 130301 OR rule.id: 130302",
+          "queryType": "lucene",
+          "refId": "A",
+          "timeField": "timestamp"
+        },
+        {
+          "alias": "PortScan",
+          "bucketAggs": [
+            {
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "feuw803e5agowf"
+          },
+          "format": "table",
+          "hide": false,
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.groups: \"fwfortigate\" AND data.devname:$devname AND data.srcip:$srcip AND rule.id: 130300",
+          "queryType": "lucene",
+          "refId": "B",
+          "timeField": "timestamp"
+        },
+        {
+          "alias": "",
+          "bucketAggs": [
+            {
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "feuw803e5agowf"
+          },
+          "format": "table",
+          "hide": false,
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.groups: \"fwfortigate\" AND data.devname:$devname AND data.srcip:$srcip AND rule.id: 130008 OR rule.id: 130009 OR rule.id: 130010 OR rule.id: 130014 OR rule.id: 130015 OR rule.id: 130016 OR rule.id:130107",
+          "queryType": "lucene",
+          "refId": "C",
+          "timeField": "timestamp"
+        }
+      ],
+      "title": "",
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "reducers": [
+              "sum"
+            ]
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "gapit-htmlgraphics-panel"
+    },
+    {
+      "datasource": {
+        "type": "grafana-opensearch-datasource",
+        "uid": "feuw803e5agowf"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 12,
+        "w": 11,
+        "x": 8,
+        "y": 21
+      },
+      "id": 8,
+      "options": {
+        "SVGBaseFix": true,
+        "add100Percentage": true,
+        "calcsMutation": "standard",
+        "centerAlignContent": true,
+        "codeData": "{\n  \"text\": \"Random text\"\n}",
+        "css": ".main {\n  border-radius: 15px;\n  padding: 1rem 0rem 0rem 2rem;\n  color: white;\n}  \n\nh2 {\n  margin: 0 0 8px 0;\n  font-size: 14px;\n  color: #dbb6b6;\n  text-transform: uppercase;\n  letter-spacing: .8px;\n}\n\ntable {\n  width: 100%;\n  border-collapse: separate;\n  border-spacing: 0; /* vamos usar gap pelo flex/grid */\n}\n\nthead {\n  display: table-header-group; /* mantém cabeçalho como tabela */\n\n}\n\ntbody {\n  display: grid;\n  row-gap: 10px; /* espaço entre linhas */\n}\n\ntr {\ndisplay: grid;\ngrid-template-columns: 2fr 1fr 1fr 1fr;  \ngap: 1rem; /* espaço entre colunas */\n}\n\nth {\n  text-align: start;\n  margin-bottom: 1rem;\n}\n\nth, td {\n  padding: 12px 15px;\n  background-color: #660000;\n  border-radius: 8px;\n  color: white;\n  font-size: 14px;\n\n}\n\nth {\n  color: #b91f22;\n  font-weight: 500;\n}\n\ntd:first-child,\nth:first-child {\n  min-width: 200px; /* primeira coluna maior */\n}\n\ntd:first-child {\n  border-top-left-radius: 8px;\n  border-bottom-left-radius: 8px;\n}\n\ntd:last-child {\n  border-top-right-radius: 8px;\n  border-bottom-right-radius: 8px;\n}\n\n.footer {\n  margin-top: 10px;\n  font-size: 12px;\n  color: #b0b0b0;\n}\n",
+        "dynamicData": false,
+        "dynamicFieldDisplayValues": false,
+        "dynamicHtmlGraphics": false,
+        "dynamicProps": false,
+        "html": "<main>\n  <h2>MAPA MITRE ATT&CK (TÉCNICAS RELACIONADAS)</h2>\n\n  <table id=\"mitreTable\">\n    <thead>\n      <tr>\n        <th>Técnica</th>\n        <th>ID</th>\n        <th>Severidade</th>\n        <th>Detectado</th>\n      </tr>\n    </thead>\n    <tbody>\n      <!-- Linhas via JS -->\n    </tbody>\n  </table>\n\n  <div class=\"footer\" id=\"footer\">MITRE Tactic defines the objectives an attacker seeks to achieve at each stage of a cyberattack.</div>\n</main>",
+        "onInit": "// Sets the text from customProperties\nconst htmlgraphicsText = htmlNode.getElementById('htmlgraphics-text');\n\nif (htmlgraphicsText) {\n  htmlgraphicsText.textContent = customProperties.text;\n\n  // Change the text color based on the theme\n  if (theme.isDark) {\n    htmlgraphicsText.style.color = 'green';\n  } else {\n    htmlgraphicsText.style.color = 'red';\n  }\n}\n",
+        "onInitOnResize": false,
+        "onRender": "// Garante que data.series[0]?.fields exista\nconst valuesAttackers = data?.series?.[0]?.fields || [];\n\n// Se não tiver valores, evita erro\nif (valuesAttackers.length < 4) {\n  console.warn(\"Sem dados para montar tabela MITRE\");\n} else {\n  // Converte colunas em array de objetos\n  const mitreTechnique = valuesAttackers[0].values.map((_, index) => ({\n    tecnica: valuesAttackers[0].values?.[index] ?? \"\",\n    id: valuesAttackers[1].values?.[index] ?? \"\",\n    severidade: valuesAttackers[2].values?.[index] ?? \"\",\n    detectado: valuesAttackers[3].values?.[index] ?? \"\"\n  }));\n\n  // Ordena do maior detectado para o menor (tratando caso vazio)\n  mitreTechnique.sort((a, b) => (b.detectado || 0) - (a.detectado || 0));\n\n  // Seleciona o tbody da tabela\n  const tableBody = htmlNode.querySelector(\"#mitreTable tbody\");\n  tableBody.innerHTML = \"\"; // Limpa linhas antigas\n\n  // Popula a tabela\n  mitreTechnique.forEach(item => {\n    const row = document.createElement(\"tr\");\n    row.innerHTML = `\n      <td>${item.tecnica}</td>\n      <td>${item.id}</td>\n      <td>${item.severidade ? item.severidade + \"/15\" : \"\"}</td>\n      <td>${item.detectado}</td>\n    `;\n    tableBody.appendChild(row);\n  });\n}\n",
+        "overflow": "auto",
+        "panelupdateOnMount": true,
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull",
+            "last",
+            "firstNotNull",
+            "first",
+            "min",
+            "max",
+            "mean",
+            "sum",
+            "count",
+            "range",
+            "delta",
+            "step",
+            "diff",
+            "logmin",
+            "allIsZero",
+            "allIsNull",
+            "diffperc"
+          ]
+        },
+        "renderOnMount": true,
+        "rootCSS": "",
+        "useGrafanaScrollbar": true
+      },
+      "pluginVersion": "2.2.1",
+      "targets": [
+        {
+          "alias": "",
+          "bucketAggs": [
+            {
+              "field": "rule.mitre.technique",
+              "id": "2",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "rule.level",
+              "id": "3",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "rule.mitre.id",
+              "id": "4",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            }
+          ],
+          "format": "table",
+          "luceneQueryType": "Metric",
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.groups: \"fwfortigate\" AND data.devname:$devname AND data.srcip:$srcip",
+          "queryType": "lucene",
+          "refId": "A",
+          "timeField": "timestamp"
+        }
+      ],
+      "title": "",
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {},
+            "includeByName": {},
+            "indexByName": {
+              "Count": 3,
+              "rule.level": 2,
+              "rule.mitre.id": 1,
+              "rule.mitre.technique": 0
+            },
+            "renameByName": {
+              "Count": "Count",
+              "rule.level": "level",
+              "rule.mitre.id": "id",
+              "rule.mitre.technique": "Technique"
+            }
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "gapit-htmlgraphics-panel"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "-- Dashboard --"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 5,
+        "x": 19,
+        "y": 21
+      },
+      "id": 12,
+      "options": {
+        "SVGBaseFix": true,
+        "add100Percentage": true,
+        "calcsMutation": "standard",
+        "centerAlignContent": true,
+        "codeData": "{\n  \"text\": \"Random text\"\n}",
+        "css": "h2 {\r\n    margin-bottom: 10px;\r\n    color: #B6BED1;\r\n    font-weight: 600;\r\n    font-size: 1.2rem;\r\n    background-color: #1c1c1c;\r\n    padding: 1rem 2rem 0rem 2rem;\r\n    border-radius: 5px;\r\n}",
+        "dynamicData": false,
+        "dynamicFieldDisplayValues": false,
+        "dynamicHtmlGraphics": false,
+        "dynamicProps": false,
+        "html": "<h2>AUDIT LOGIN</h2>",
+        "onInit": "// Sets the text from customProperties\nconst htmlgraphicsText = htmlNode.getElementById('htmlgraphics-text');\n\nif (htmlgraphicsText) {\n  htmlgraphicsText.textContent = customProperties.text;\n\n  // Change the text color based on the theme\n  if (theme.isDark) {\n    htmlgraphicsText.style.color = 'green';\n  } else {\n    htmlgraphicsText.style.color = 'red';\n  }\n}\n",
+        "onInitOnResize": false,
+        "onRender": "",
+        "overflow": "visible",
+        "panelupdateOnMount": true,
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull",
+            "last",
+            "firstNotNull",
+            "first",
+            "min",
+            "max",
+            "mean",
+            "sum",
+            "count",
+            "range",
+            "delta",
+            "step",
+            "diff",
+            "logmin",
+            "allIsZero",
+            "allIsNull",
+            "diffperc"
+          ]
+        },
+        "renderOnMount": true,
+        "rootCSS": "",
+        "useGrafanaScrollbar": false
+      },
+      "pluginVersion": "2.2.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "datasource",
+            "uid": "-- Dashboard --"
+          },
+          "refId": "A"
+        }
+      ],
+      "title": "",
+      "transparent": true,
+      "type": "gapit-htmlgraphics-panel"
+    },
+    {
+      "datasource": {
+        "type": "grafana-opensearch-datasource",
+        "uid": "feuw803e5agowf"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            }
+          },
+          "mappings": []
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "GUI - Login Failed"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "dark-red",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "GUI - Login Success"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "dark-orange",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "SSH - Login Failed"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "red",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "SSH - Login Success"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "orange",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "GUI & SSH - Login Failed, Non-existent user"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "dark-yellow",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 5,
+        "x": 19,
+        "y": 23
+      },
+      "id": 13,
+      "options": {
+        "displayLabels": [],
+        "legend": {
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true,
+          "values": [
+            "value"
+          ]
+        },
+        "pieType": "pie",
+        "reduceOptions": {
+          "calcs": [
+            "sum"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "12.1.1",
+      "targets": [
+        {
+          "alias": "GUI - Login Success",
+          "bucketAggs": [
+            {
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "feuw803e5agowf"
+          },
+          "format": "table",
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.groups:\"fwfortigate\" AND data.devname:$devname AND data.srcip:$srcip AND rule.id: 130006",
+          "queryType": "lucene",
+          "refId": "A",
+          "timeField": "timestamp"
+        },
+        {
+          "alias": "GUI - Login Failed",
+          "bucketAggs": [
+            {
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "feuw803e5agowf"
+          },
+          "format": "table",
+          "hide": false,
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.groups:\"fwfortigate\" AND rule.id: 130007",
+          "queryType": "lucene",
+          "refId": "B",
+          "timeField": "timestamp"
+        },
+        {
+          "alias": "SSH - Login Success",
+          "bucketAggs": [
+            {
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "feuw803e5agowf"
+          },
+          "format": "table",
+          "hide": false,
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.groups:\"fwfortigate\" AND rule.id: 130012",
+          "queryType": "lucene",
+          "refId": "C",
+          "timeField": "timestamp"
+        },
+        {
+          "alias": "SSH - Login Failed",
+          "bucketAggs": [
+            {
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "feuw803e5agowf"
+          },
+          "format": "table",
+          "hide": false,
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.groups:\"fwfortigate\" AND rule.id: 130013",
+          "queryType": "lucene",
+          "refId": "D",
+          "timeField": "timestamp"
+        },
+        {
+          "alias": "GUI & SSH - Login Failed, Non-existent user",
+          "bucketAggs": [
+            {
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "feuw803e5agowf"
+          },
+          "format": "table",
+          "hide": false,
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.groups:\"fwfortigate\" AND rule.id: 130008 OR rule.id: 130014",
+          "queryType": "lucene",
+          "refId": "E",
+          "timeField": "timestamp"
+        }
+      ],
+      "title": "",
+      "transparent": true,
+      "type": "piechart"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "-- Dashboard --"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 5,
+        "x": 0,
+        "y": 33
+      },
+      "id": 7,
+      "options": {
+        "SVGBaseFix": true,
+        "add100Percentage": true,
+        "calcsMutation": "standard",
+        "centerAlignContent": true,
+        "codeData": "{\n  \"text\": \"Random text\"\n}",
+        "css": "h2 {\r\n    margin-bottom: 10px;\r\n    color: #B6BED1;\r\n    font-weight: 600;\r\n    font-size: 1.2rem;\r\n    background-color: #1c1c1c;\r\n    padding: 1rem 2rem 0rem 2rem;\r\n    border-radius: 5px;\r\n}",
+        "dynamicData": false,
+        "dynamicFieldDisplayValues": false,
+        "dynamicHtmlGraphics": false,
+        "dynamicProps": false,
+        "html": "<h2>TOP 10 ATTACKERS</h2>",
+        "onInit": "// Sets the text from customProperties\nconst htmlgraphicsText = htmlNode.getElementById('htmlgraphics-text');\n\nif (htmlgraphicsText) {\n  htmlgraphicsText.textContent = customProperties.text;\n\n  // Change the text color based on the theme\n  if (theme.isDark) {\n    htmlgraphicsText.style.color = 'green';\n  } else {\n    htmlgraphicsText.style.color = 'red';\n  }\n}\n",
+        "onInitOnResize": false,
+        "onRender": "",
+        "overflow": "visible",
+        "panelupdateOnMount": true,
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull",
+            "last",
+            "firstNotNull",
+            "first",
+            "min",
+            "max",
+            "mean",
+            "sum",
+            "count",
+            "range",
+            "delta",
+            "step",
+            "diff",
+            "logmin",
+            "allIsZero",
+            "allIsNull",
+            "diffperc"
+          ]
+        },
+        "renderOnMount": true,
+        "rootCSS": "",
+        "useGrafanaScrollbar": false
+      },
+      "pluginVersion": "2.2.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "datasource",
+            "uid": "-- Dashboard --"
+          },
+          "refId": "A"
+        }
+      ],
+      "title": "",
+      "transparent": true,
+      "type": "gapit-htmlgraphics-panel"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "-- Dashboard --"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 6,
+        "x": 5,
+        "y": 33
+      },
+      "id": 9,
+      "options": {
+        "SVGBaseFix": true,
+        "add100Percentage": true,
+        "calcsMutation": "standard",
+        "centerAlignContent": true,
+        "codeData": "{\n  \"text\": \"Random text\"\n}",
+        "css": "h2 {\r\n    margin-bottom: 10px;\r\n    color: #B6BED1;\r\n    font-weight: 600;\r\n    font-size: 1.2rem;\r\n    background-color: #1c1c1c;\r\n    padding: 1rem 2rem 0rem 2rem;\r\n    border-radius: 5px;\r\n}",
+        "dynamicData": false,
+        "dynamicFieldDisplayValues": false,
+        "dynamicHtmlGraphics": false,
+        "dynamicProps": false,
+        "html": "<h2>TOP FIREWALLS ATTACKED</h2>",
+        "onInit": "// Sets the text from customProperties\nconst htmlgraphicsText = htmlNode.getElementById('htmlgraphics-text');\n\nif (htmlgraphicsText) {\n  htmlgraphicsText.textContent = customProperties.text;\n\n  // Change the text color based on the theme\n  if (theme.isDark) {\n    htmlgraphicsText.style.color = 'green';\n  } else {\n    htmlgraphicsText.style.color = 'red';\n  }\n}\n",
+        "onInitOnResize": false,
+        "onRender": "",
+        "overflow": "visible",
+        "panelupdateOnMount": true,
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull",
+            "last",
+            "firstNotNull",
+            "first",
+            "min",
+            "max",
+            "mean",
+            "sum",
+            "count",
+            "range",
+            "delta",
+            "step",
+            "diff",
+            "logmin",
+            "allIsZero",
+            "allIsNull",
+            "diffperc"
+          ]
+        },
+        "renderOnMount": true,
+        "rootCSS": "",
+        "useGrafanaScrollbar": false
+      },
+      "pluginVersion": "2.2.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "datasource",
+            "uid": "-- Dashboard --"
+          },
+          "refId": "A"
+        }
+      ],
+      "title": "",
+      "transparent": true,
+      "type": "gapit-htmlgraphics-panel"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "-- Dashboard --"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 7,
+        "x": 11,
+        "y": 33
+      },
+      "id": 16,
+      "options": {
+        "SVGBaseFix": true,
+        "add100Percentage": true,
+        "calcsMutation": "standard",
+        "centerAlignContent": true,
+        "codeData": "{\n  \"text\": \"Random text\"\n}",
+        "css": "h2 {\r\n    margin-bottom: 10px;\r\n    color: #B6BED1;\r\n    font-weight: 600;\r\n    font-size: 1.2rem;\r\n    background-color: #1c1c1c;\r\n    padding: 1rem 2rem 0rem 2rem;\r\n    border-radius: 5px;\r\n}",
+        "dynamicData": false,
+        "dynamicFieldDisplayValues": false,
+        "dynamicHtmlGraphics": false,
+        "dynamicProps": false,
+        "html": "<h2>TOP FIREWALLS ATTACK</h2>",
+        "onInit": "// Sets the text from customProperties\nconst htmlgraphicsText = htmlNode.getElementById('htmlgraphics-text');\n\nif (htmlgraphicsText) {\n  htmlgraphicsText.textContent = customProperties.text;\n\n  // Change the text color based on the theme\n  if (theme.isDark) {\n    htmlgraphicsText.style.color = 'green';\n  } else {\n    htmlgraphicsText.style.color = 'red';\n  }\n}\n",
+        "onInitOnResize": false,
+        "onRender": "",
+        "overflow": "visible",
+        "panelupdateOnMount": true,
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull",
+            "last",
+            "firstNotNull",
+            "first",
+            "min",
+            "max",
+            "mean",
+            "sum",
+            "count",
+            "range",
+            "delta",
+            "step",
+            "diff",
+            "logmin",
+            "allIsZero",
+            "allIsNull",
+            "diffperc"
+          ]
+        },
+        "renderOnMount": true,
+        "rootCSS": "",
+        "useGrafanaScrollbar": false
+      },
+      "pluginVersion": "2.2.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "datasource",
+            "uid": "-- Dashboard --"
+          },
+          "refId": "A"
+        }
+      ],
+      "title": "",
+      "transparent": true,
+      "type": "gapit-htmlgraphics-panel"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "-- Dashboard --"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 6,
+        "x": 18,
+        "y": 33
+      },
+      "id": 11,
+      "options": {
+        "SVGBaseFix": true,
+        "add100Percentage": true,
+        "calcsMutation": "standard",
+        "centerAlignContent": true,
+        "codeData": "{\n  \"text\": \"Random text\"\n}",
+        "css": "h2 {\r\n    margin-bottom: 10px;\r\n    color: #B6BED1;\r\n    font-weight: 600;\r\n    font-size: 1.2rem;\r\n    background-color: #1c1c1c;\r\n    padding: 1rem 2rem 0rem 2rem;\r\n    border-radius: 5px;\r\n}",
+        "dynamicData": false,
+        "dynamicFieldDisplayValues": false,
+        "dynamicHtmlGraphics": false,
+        "dynamicProps": false,
+        "html": "<h2>AUDIT VPN</h2>",
+        "onInit": "// Sets the text from customProperties\nconst htmlgraphicsText = htmlNode.getElementById('htmlgraphics-text');\n\nif (htmlgraphicsText) {\n  htmlgraphicsText.textContent = customProperties.text;\n\n  // Change the text color based on the theme\n  if (theme.isDark) {\n    htmlgraphicsText.style.color = 'green';\n  } else {\n    htmlgraphicsText.style.color = 'red';\n  }\n}\n",
+        "onInitOnResize": false,
+        "onRender": "",
+        "overflow": "visible",
+        "panelupdateOnMount": true,
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull",
+            "last",
+            "firstNotNull",
+            "first",
+            "min",
+            "max",
+            "mean",
+            "sum",
+            "count",
+            "range",
+            "delta",
+            "step",
+            "diff",
+            "logmin",
+            "allIsZero",
+            "allIsNull",
+            "diffperc"
+          ]
+        },
+        "renderOnMount": true,
+        "rootCSS": "",
+        "useGrafanaScrollbar": false
+      },
+      "pluginVersion": "2.2.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "datasource",
+            "uid": "-- Dashboard --"
+          },
+          "refId": "A"
+        }
+      ],
+      "title": "",
+      "transparent": true,
+      "type": "gapit-htmlgraphics-panel"
+    },
+    {
+      "datasource": {
+        "type": "grafana-opensearch-datasource",
+        "uid": "feuw803e5agowf"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "left",
+            "cellOptions": {
+              "type": "auto",
+              "wrapText": true
+            },
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": 0
+              },
+              {
+                "color": "blue",
+                "value": 80
+              },
+              {
+                "color": "dark-red",
+                "value": 90
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Count Attack"
+            },
+            "properties": [
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "mode": "gradient",
+                  "type": "gauge",
+                  "valueDisplayMode": "text"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "IP"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 151
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 5,
+        "x": 0,
+        "y": 35
+      },
+      "id": 6,
+      "options": {
+        "cellHeight": "sm",
+        "footer": {
+          "countRows": false,
+          "enablePagination": true,
+          "fields": "",
+          "reducer": [
+            "sum"
+          ],
+          "show": false
+        },
+        "showHeader": true,
+        "sortBy": []
+      },
+      "pluginVersion": "12.1.1",
+      "targets": [
+        {
+          "alias": "",
+          "bucketAggs": [
+            {
+              "field": "data.srcip",
+              "id": "3",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_count",
+                "size": "10"
+              },
+              "type": "terms"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "feuw803e5agowf"
+          },
+          "format": "table",
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.groups: \"fwfortigate\" AND data.devname:$devname AND data.srcip:$srcip AND rule.level:[6 TO *]",
+          "queryType": "lucene",
+          "refId": "A",
+          "timeField": "timestamp"
+        }
+      ],
+      "title": "",
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {},
+            "includeByName": {},
+            "indexByName": {},
+            "renameByName": {
+              "Count": "Count Attack",
+              "data.srcip": "IP"
+            }
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "table"
+    },
+    {
+      "datasource": {
+        "type": "grafana-opensearch-datasource",
+        "uid": "feuw803e5agowf"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "left",
+            "cellOptions": {
+              "type": "auto",
+              "wrapText": true
+            },
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": 0
+              },
+              {
+                "color": "blue",
+                "value": 80
+              },
+              {
+                "color": "dark-red",
+                "value": 90
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Count Attack"
+            },
+            "properties": [
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "mode": "gradient",
+                  "type": "gauge",
+                  "valueDisplayMode": "text"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "IP"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 123
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 6,
+        "x": 5,
+        "y": 35
+      },
+      "id": 10,
+      "options": {
+        "cellHeight": "sm",
+        "footer": {
+          "countRows": false,
+          "enablePagination": true,
+          "fields": "",
+          "reducer": [
+            "sum"
+          ],
+          "show": false
+        },
+        "showHeader": true,
+        "sortBy": []
+      },
+      "pluginVersion": "12.1.1",
+      "targets": [
+        {
+          "alias": "",
+          "bucketAggs": [
+            {
+              "field": "data.devname",
+              "id": "3",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_count",
+                "size": "0"
+              },
+              "type": "terms"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "feuw803e5agowf"
+          },
+          "format": "table",
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.groups: \"fwfortigate\" AND data.devname:$devname AND data.srcip:$srcip AND rule.level:[6 TO *]",
+          "queryType": "lucene",
+          "refId": "A",
+          "timeField": "timestamp"
+        }
+      ],
+      "title": "",
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {},
+            "includeByName": {},
+            "indexByName": {},
+            "renameByName": {
+              "Count": "Count Attack",
+              "data.devname": "Firewall",
+              "data.srcip": "IP"
+            }
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "table"
+    },
+    {
+      "datasource": {
+        "type": "grafana-opensearch-datasource",
+        "uid": "feuw803e5agowf"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "hidden",
+            "fillOpacity": 80,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineWidth": 1,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": 0
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 7,
+        "x": 11,
+        "y": 35
+      },
+      "id": 17,
+      "options": {
+        "barRadius": 0.2,
+        "barWidth": 0.74,
+        "fullHighlight": false,
+        "groupWidth": 0.7,
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": false
+        },
+        "orientation": "auto",
+        "showValue": "auto",
+        "stacking": "none",
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "single",
+          "sort": "none"
+        },
+        "xTickLabelMaxLength": 40,
+        "xTickLabelRotation": 0,
+        "xTickLabelSpacing": 100
+      },
+      "pluginVersion": "12.1.1",
+      "targets": [
+        {
+          "alias": "",
+          "bucketAggs": [
+            {
+              "field": "rule.description",
+              "id": "3",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "10"
+              },
+              "type": "terms"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "feuw803e5agowf"
+          },
+          "format": "table",
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.groups:\"fwfortigate\" AND data.devname:$devname AND data.srcip:$srcip AND rule.level: [6 TO *]",
+          "queryType": "lucene",
+          "refId": "A",
+          "timeField": "timestamp"
+        }
+      ],
+      "title": "",
+      "transformations": [
+        {
+          "id": "renameByRegex",
+          "options": {
+            "regex": "^Fortigate:\\s*(.*)$",
+            "renamePattern": "$1"
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "barchart"
+    },
+    {
+      "datasource": {
+        "type": "grafana-opensearch-datasource",
+        "uid": "feuw803e5agowf"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            }
+          },
+          "mappings": []
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "VPN SSL - Login Failed"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "red",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "VPN SSL - Login Success"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "dark-orange",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "VPN SSL - Permission Denied"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "dark-red",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "VPN SSL - Non-existent user"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "orange",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 6,
+        "x": 18,
+        "y": 35
+      },
+      "id": 14,
+      "options": {
+        "displayLabels": [],
+        "legend": {
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true,
+          "values": [
+            "value"
+          ]
+        },
+        "pieType": "pie",
+        "reduceOptions": {
+          "calcs": [
+            "sum"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "12.1.1",
+      "targets": [
+        {
+          "alias": "VPN SSL - Login Success",
+          "bucketAggs": [
+            {
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "feuw803e5agowf"
+          },
+          "format": "table",
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.groups:\"fortigate-vpn\" AND data.devname:$devname AND data.srcip:$srcip AND rule.id: 130102",
+          "queryType": "lucene",
+          "refId": "A",
+          "timeField": "timestamp"
+        },
+        {
+          "alias": "VPN SSL - Login Failed",
+          "bucketAggs": [
+            {
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "feuw803e5agowf"
+          },
+          "format": "table",
+          "hide": false,
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.groups:\"fortigate-vpn\" AND rule.id: 130104",
+          "queryType": "lucene",
+          "refId": "B",
+          "timeField": "timestamp"
+        },
+        {
+          "alias": "VPN SSL - Permission Denied",
+          "bucketAggs": [
+            {
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "feuw803e5agowf"
+          },
+          "format": "table",
+          "hide": false,
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.groups:\"fortigate-vpn\" AND rule.id: 130106",
+          "queryType": "lucene",
+          "refId": "C",
+          "timeField": "timestamp"
+        },
+        {
+          "alias": "VPN SSL - Non-existent user",
+          "bucketAggs": [
+            {
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "feuw803e5agowf"
+          },
+          "format": "table",
+          "hide": false,
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "rule.groups:\"fortigate-vpn\" AND rule.id: 130105",
+          "queryType": "lucene",
+          "refId": "D",
+          "timeField": "timestamp"
+        }
+      ],
+      "title": "",
+      "transparent": true,
+      "type": "piechart"
+    },
+    {
+      "datasource": {
+        "type": "grafana-opensearch-datasource",
+        "uid": "feuw803e5agowf"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 3,
+        "x": 0,
+        "y": 44
+      },
+      "id": 15,
+      "options": {
+        "SVGBaseFix": true,
+        "add100Percentage": true,
+        "calcsMutation": "standard",
+        "centerAlignContent": true,
+        "codeData": "{\n  \"text\": \"Random text\"\n}",
+        "css": "#scrollBtn {\n  position: fixed;\n  background-color: #3a0001;\n  color: white;\n  border: none;\n  padding: 10px 15px;\n  border-radius: 8px;\n  cursor: pointer;\n  font-size: 16px;\n  transition: background-color 0.3s;\n}",
+        "dynamicData": false,
+        "dynamicFieldDisplayValues": false,
+        "dynamicHtmlGraphics": false,
+        "dynamicProps": false,
+        "html": "<button id=\"scrollBtn\">Iniciar Scroll</button>",
+        "onInit": "",
+        "onInitOnResize": false,
+        "onRender": "const btn = htmlNode.getElementById('scrollBtn');\nlet scrolling = false;\nlet direction = 1; // 1 = descer, -1 = subir\nconst speed = 1; // pixels por frame\nlet rafId = null;\n\nfunction scrollStep() {\n  const maxScroll = document.documentElement.scrollHeight - window.innerHeight;\n  let nextPos = window.scrollY + direction * speed;\n\n  if (nextPos >= maxScroll) {\n    direction = -1; // inverter para subir\n  } else if (nextPos <= 0) {\n    direction = 1; // inverter para descer\n  }\n\n  window.scrollTo(0, nextPos);\n  rafId = requestAnimationFrame(scrollStep);\n}\n\nbtn.addEventListener('click', () => {\n  if (!scrolling) {\n    scrolling = true;\n    btn.textContent = \"Parar Scroll\";\n\n    // cancela qualquer loop antigo antes de começar um novo\n    if (rafId) cancelAnimationFrame(rafId);\n\n    scrollStep();\n  } else {\n    scrolling = false;\n    btn.textContent = \"Iniciar Scroll\";\n    cancelAnimationFrame(rafId);\n    rafId = null;\n  }\n});\n\n",
+        "overflow": "visible",
+        "panelupdateOnMount": true,
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull",
+            "last",
+            "firstNotNull",
+            "first",
+            "min",
+            "max",
+            "mean",
+            "sum",
+            "count",
+            "range",
+            "delta",
+            "step",
+            "diff",
+            "logmin",
+            "allIsZero",
+            "allIsNull",
+            "diffperc"
+          ]
+        },
+        "renderOnMount": true,
+        "rootCSS": "",
+        "useGrafanaScrollbar": true
+      },
+      "pluginVersion": "2.2.1",
+      "targets": [
+        {
+          "alias": "",
+          "bucketAggs": [
+            {
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "format": "table",
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "",
+          "queryType": "lucene",
+          "refId": "A",
+          "timeField": "timestamp"
+        }
+      ],
+      "title": "",
+      "transparent": true,
+      "type": "gapit-htmlgraphics-panel"
+    },
+    {
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 46
+      },
+      "id": 19,
+      "panels": [
+        {
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "feuw803e5agowf"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "align": "auto",
+                "cellOptions": {
+                  "type": "auto"
+                },
+                "inspect": false
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": 0
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Data"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 205
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Descição"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 419
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Ação"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 90
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Firewall"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 162
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Type"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 75
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "SubType"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 80
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Mensagem"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 318
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 24,
+            "x": 0,
+            "y": 44
+          },
+          "id": 20,
+          "options": {
+            "cellHeight": "sm",
+            "footer": {
+              "countRows": false,
+              "fields": "",
+              "reducer": [
+                "sum"
+              ],
+              "show": false
+            },
+            "showHeader": true,
+            "sortBy": []
+          },
+          "pluginVersion": "12.1.1",
+          "targets": [
+            {
+              "alias": "",
+              "bucketAggs": [
+                {
+                  "field": "timestamp",
+                  "id": "2",
+                  "settings": {
+                    "interval": "auto"
+                  },
+                  "type": "date_histogram"
+                }
+              ],
+              "datasource": {
+                "type": "grafana-opensearch-datasource",
+                "uid": "feuw803e5agowf"
+              },
+              "format": "table",
+              "metrics": [
+                {
+                  "id": "1",
+                  "type": "logs"
+                }
+              ],
+              "query": "rule.groups:\"fwfortigate\" AND data.srcip:$srcip AND data.action:$action",
+              "queryType": "lucene",
+              "refId": "A",
+              "timeField": "timestamp"
+            }
+          ],
+          "title": "Logs",
+          "transformations": [
+            {
+              "id": "filterFieldsByName",
+              "options": {
+                "include": {
+                  "names": [
+                    "timestamp",
+                    "rule.description",
+                    "data.action",
+                    "data.devname",
+                    "data.dstip",
+                    "data.dstport",
+                    "data.kind",
+                    "data.msg",
+                    "data.srcip",
+                    "data.srcport",
+                    "data.type",
+                    "data.user",
+                    "data.appcat",
+                    "data.catdesc"
+                  ]
+                }
+              }
+            },
+            {
+              "id": "organize",
+              "options": {
+                "excludeByName": {},
+                "includeByName": {},
+                "indexByName": {
+                  "data.action": 2,
+                  "data.devname": 3,
+                  "data.dstip": 6,
+                  "data.dstport": 7,
+                  "data.kind": 9,
+                  "data.msg": 10,
+                  "data.srcip": 4,
+                  "data.srcport": 5,
+                  "data.type": 8,
+                  "data.user": 11,
+                  "rule.description": 1,
+                  "timestamp": 0
+                },
+                "renameByName": {
+                  "data.action": "Ação",
+                  "data.appcat": "Categoria APP",
+                  "data.catdesc": "Categoria",
+                  "data.devname": "Firewall",
+                  "data.dstip": "IP de destino",
+                  "data.dstport": "Porta de destino",
+                  "data.kind": "SubType",
+                  "data.msg": "Mensagem",
+                  "data.srcip": "IP de origem",
+                  "data.srcport": "Porta de origem",
+                  "data.type": "Type",
+                  "data.user": "Usuário",
+                  "rule.description": "Descição",
+                  "timestamp": "Data"
+                }
+              }
+            }
+          ],
+          "transparent": true,
+          "type": "table"
+        }
+      ],
+      "title": "Logs",
+      "type": "row"
+    }
+  ],
+  "preload": false,
+  "schemaVersion": 41,
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "allValue": "*",
+        "current": {
+          "text": "All",
+          "value": "$__all"
+        },
+        "datasource": {
+          "type": "grafana-opensearch-datasource",
+          "uid": "feuw803e5agowf"
+        },
+        "definition": "{\"find\": \"terms\", \"field\": \"data.srcip\"}",
+        "includeAll": true,
+        "label": "IP",
+        "name": "srcip",
+        "options": [],
+        "query": "{\"find\": \"terms\", \"field\": \"data.srcip\"}",
+        "refresh": 1,
+        "regex": "",
+        "type": "query"
+      },
+      {
+        "allValue": "*",
+        "current": {
+          "text": "All",
+          "value": "$__all"
+        },
+        "datasource": {
+          "type": "grafana-opensearch-datasource",
+          "uid": "feuw803e5agowf"
+        },
+        "definition": "{\"find\": \"terms\", \"field\": \"data.action\"}",
+        "description": "",
+        "includeAll": true,
+        "label": "Ação",
+        "name": "action",
+        "options": [],
+        "query": "{\"find\": \"terms\", \"field\": \"data.action\"}",
+        "refresh": 1,
+        "regex": "",
+        "type": "query"
+      },
+      {
+        "allValue": "*",
+        "current": {
+          "text": "All",
+          "value": "$__all"
+        },
+        "datasource": {
+          "type": "grafana-opensearch-datasource",
+          "uid": "feuw803e5agowf"
+        },
+        "definition": "{\"find\": \"terms\", \"field\": \"data.devname\"}",
+        "description": "",
+        "includeAll": true,
+        "label": "Firewall",
+        "name": "devname",
+        "options": [],
+        "query": "{\"find\": \"terms\", \"field\": \"data.devname\"}",
+        "refresh": 1,
+        "regex": "",
+        "type": "query"
+      }
+    ]
+  },
+  "time": {
+    "from": "now-30m",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "browser",
+  "title": "Firewall Attack 01",
+  "uid": "b35a7f94-e68d-4222-826c-e3ea590ef33f",
+  "version": 111
+}

@@ -1,0 +1,402 @@
+<group name="fwfortigate,">
+  <!-- Main Rule -->
+  <rule id="130000" level="0">
+    <decoded_as>json</decoded_as>
+    <field name="firewall">FortiGate</field>
+    <description>Log of a fortigate firewall.</description>
+  </rule>
+  
+  <!-- 
+  #############################
+  #     Division by events    # 
+  #############################
+  -->
+  
+  <!-- ### traffic ### -->
+  <rule id="130001" level="0">
+    <if_sid>130000</if_sid>
+    <field name="type">traffic</field>
+    <description>Fortigate: Log type traffic.</description>
+  </rule>
+  
+   <!-- ### event ### -->
+  <rule id="130002" level="0">
+    <if_sid>130000</if_sid>
+    <field name="type">event</field>
+    <description>Fortigate: Log type event.</description>
+  </rule>
+  
+   <!-- ### UTM ### -->
+  <rule id="130003" level="0">
+    <if_sid>130000</if_sid>
+    <field name="type">UTM</field>
+    <description>Fortigate: Log type UTM.</description>
+  </rule>
+  
+  <!-- 
+  ##################################
+  #     SSH and GUI login rules    # 
+  ##################################
+  -->
+  
+  <rule id="130004" level="0">
+    <if_sid>130002</if_sid>
+    <action>login</action>
+    <description>Fortigate: login attempt.</description>
+    <group>fortigate-login</group>
+  </rule>
+
+  <!-- ### Login HTTP ### -->  
+  
+  <rule id="130005" level="0">
+    <if_sid>130004</if_sid>
+    <field name="method">http</field>
+    <description>Fortigate: GUI login attempt.</description>
+    <group>fortigate-login</group>
+  </rule>
+  
+  <rule id="130006" level="3">
+    <if_sid>130005</if_sid>
+    <status>success</status>
+    <description>Fortigate: GUI login successful for $(user).</description>
+    <group>fortigate-login</group>
+  </rule>
+  
+  <rule id="130007" level="4">
+    <if_sid>130005</if_sid>
+    <status>failed</status>
+    <description>Fortigate: GUI login failed for $(user).</description>
+    <group>fortigate-login</group>
+  </rule>
+  
+  <rule id="130008" level="6">
+    <if_sid>130007</if_sid>
+    <field name="reason">name_invalid</field>
+    <description>Fortigate: GUI login attempt failed using non-existent user $(user).</description>
+    <group>fortigate-login</group>
+    <mitre>
+      <id>T1110</id> <!-- Brute Force: Tentativa de login repetida -->
+    </mitre>
+  </rule>
+  
+  <rule id="130009" level="10" frequency="6" timeframe="240">
+    <if_matched_sid>130007</if_matched_sid>
+    <same_source_ip />
+    <description>Fortigate: GUI Brute Force Attempt from IP $(srcip). Authentication failed.</description>
+    <mitre>
+      <id>T1110</id> <!-- Brute Force: Ataque de força bruta em GUI -->
+    </mitre>
+  </rule>
+  
+  <rule id="130010" level="10" frequency="6" timeframe="240">
+    <if_matched_sid>130008</if_matched_sid>
+    <same_source_ip />
+    <description>Fortigate: GUI Brute Force Attempt from IP $(srcip). Non existent user.</description>
+    <mitre>
+      <id>T1110</id> <!-- Brute Force: Tentativa usando usuário inexistente -->
+    </mitre>
+  </rule>
+  <!-- ### Login SSH ### -->
+  
+  <rule id="130011" level="0">
+    <if_sid>130004</if_sid>
+    <field name="method">ssh</field>
+    <description>Fortigate: SSH login attempt.</description>
+  </rule>
+  
+  <rule id="130012" level="3">
+    <if_sid>130011</if_sid>
+    <status>success</status>
+    <description>Fortigate: SSH login successful for $(user).</description>
+    <group>fortigate-login</group>
+  </rule>
+  
+  <rule id="130013" level="4">
+    <if_sid>130011</if_sid>
+    <status>failed</status>
+    <description>Fortigate: SSH login failed for $(user).</description>
+    <group>fortigate-login</group>
+  </rule>
+  
+  <rule id="130014" level="6">
+    <if_sid>130013</if_sid>
+    <field name="reason">name_invalid</field>
+    <description>Fortigate: SSH login attempt failed using non-existent user $(user).</description>
+    <mitre>
+      <id>T1110</id> <!-- Brute Force SSH usando usuário inválido -->
+    </mitre>
+  </rule>
+  
+  <rule id="130015" level="10" frequency="6" timeframe="240">
+    <if_matched_sid>130013</if_matched_sid>
+    <same_source_ip />
+    <description>Fortigate: SSH Brute Force Attempt from IP $(srcip). Authentication failed.</description>
+    <mitre>
+      <id>T1110</id> <!-- Brute Force SSH -->
+    </mitre>
+  </rule> 
+  
+  <rule id="130016" level="10" frequency="6" timeframe="240">
+    <if_matched_sid>130014</if_matched_sid>
+    <same_source_ip />
+    <description>Fortigate: SSH Brute Force Attempt from IP $(srcip). Non existent user.</description>
+    <mitre>
+      <id>T1110</id> <!-- Brute Force SSH com usuário inexistente -->
+    </mitre>
+  </rule> 
+  
+  <!-- 
+  ##########################
+  #      Audit Polices     # 
+  ##########################
+  -->
+  
+  <rule id="130017" level="4">
+    <if_sid>130002</if_sid>
+    <field name="cfgpath">firewall.policy|firewall.DoS-policy</field>
+    <description>Fortigate: Actions on firewall rule policies</description>
+    <group>fortigate-policy</group>
+    <mitre>
+      <id>T1609</id> <!-- Modificação de políticas de firewall -->
+    </mitre>
+  </rule> 
+  
+  <rule id="130018" level="4">
+    <if_sid>130017</if_sid>
+    <action>Add</action>
+    <description>Fortigate: Policy created</description>
+    <group>fortigate-policy</group>
+    <mitre>
+      <id>T1609</id> <!-- Adição de política de firewall -->
+    </mitre>
+  </rule>
+  
+  <rule id="130019" level="4">
+    <if_sid>130017</if_sid>
+    <action>Edit</action>
+    <description>Fortigate: Policy Edit</description>
+    <group>fortigate-policy</group>
+    <mitre>
+      <id>T1609</id> <!-- Edição de política de firewall -->
+    </mitre>
+  </rule>
+  
+  <rule id="130020" level="5">
+    <if_sid>130017</if_sid>
+    <action>Delete</action>
+    <description>Fortigate: Policy Deleted</description>
+    <group>fortigate-policy</group>
+    <mitre>
+      <id>T1609</id> <!-- Exclusão de política de firewall -->
+    </mitre>
+  </rule>
+  
+  <rule id="130021" level="4">
+    <if_sid>130017</if_sid>
+    <action>Move</action>
+    <description>Fortigate: Policy Moved</description>
+    <group>fortigate-policy</group>
+    <mitre>
+      <id>T1609</id> <!-- Mover política de firewall -->
+    </mitre>
+  </rule>
+  
+  <!-- 
+  ##########################
+  #      Traffic Rules     # 
+  ##########################
+  -->
+  
+  <rule id="130022" level="5">
+    <if_sid>130001</if_sid>
+    <action>deny</action>
+    <description>Fortigate: Traffic Deny</description>
+    <group>suspicioustraffic,</group>
+  </rule>
+  
+  <rule id="130023" level="5">
+    <if_sid>130001</if_sid>
+    <action>client-rst</action>
+    <description>Fortigate: Traffic Client Reset</description>
+    <group>suspicioustraffic,</group>
+  </rule>
+  
+  <rule id="130024" level="4">
+    <if_sid>130001</if_sid>
+    <action>accept</action>
+    <description>Fortigate: Traffic Allow</description>
+    <group>suspicioustraffic,</group>
+  </rule>
+  
+  <!-- 
+  ##########################
+  #     VPN login rules    # 
+  ##########################
+  -->
+  
+  <rule id="130100" level="0">
+    <if_sid>130002</if_sid>
+    <field name="kind">vpn</field>
+    <description>Fortigate: Logs subtype VPN.</description>
+  </rule>
+  
+  <!-- ### VPN SSL ###-->
+  <rule id="130102" level="3">
+    <if_sid>130100</if_sid>
+    <action>tunnel-up</action>
+    <description>Fortigate: Logged in to the $(tunneltype).</description>
+    <group>fortigate-vpn</group>
+  </rule>
+  
+  <rule id="130103" level="3">
+    <if_sid>130100</if_sid>
+    <action>tunnel-down</action>
+    <description>Fortigate: Logged out of the $(tunneltype).</description>
+    <group>fortigate-vpn</group>
+  </rule>
+
+  <rule id="130104" level="6">
+    <if_sid>130100</if_sid>
+    <action>ssl-login-fail</action>
+    <description>Fortigate: Failed to log in to the $(tunneltype).</description>
+    <group>fortigate-vpn</group>
+  </rule>
+  
+  <rule id="130105" level="6">
+    <if_sid>130104</if_sid>
+    <field name="reason">name_invalid</field>
+    <description>Fortigate: Failed to log in to the $(tunneltype). Using non-existent user.</description>
+    <group>fortigate-vpn</group>
+  </rule>
+  
+  <rule id="130106" level="7">
+    <if_sid>130104</if_sid>
+    <field name="reason">sslvpn_login_permission_denied</field>
+    <description>Fortigate: Failed to log in to $(tunneltype). Fortigate permission denied.</description>
+    <group>fortigate-vpn</group>
+  </rule>
+  
+  <rule id="130107" level="10" frequency="6" timeframe="240">
+    <if_matched_sid>130104</if_matched_sid>
+    <same_source_ip />
+    <description>Fortigate: $(tunneltype) Brute Force Attempt from IP $(srcip). Authentication failed.</description>
+    <group>fortigate-vpn</group>
+  </rule> 
+  
+  <rule id="130108" level="10" frequency="6" timeframe="3600">
+    <if_matched_sid>130105</if_matched_sid>
+    <same_source_ip />
+    <description>Fortigate: $(tunneltype) Brute Force Attempt from IP $(srcip). Non existent user.</description>
+    <group>fortigate-vpn</group>
+    <mitre>
+      <id>T1110</id> <!-- Brute Force VPN com usuário inexistente -->
+    </mitre>
+  </rule> 
+  
+  <rule id="130109" level="10" frequency="6" timeframe="3600">
+    <if_matched_sid>130106</if_matched_sid>
+    <same_source_ip />
+    <description>Fortigate: $(tunneltype) Brute Force Attempt from IP $(srcip). Permission denied.</description>
+    <group>fortigate-vpn</group>
+    <mitre>
+      <id>T1110</id> <!-- Brute Force VPN com usuário inexistente -->
+    </mitre>
+  </rule> 
+  
+  <!-- 
+  #####################################
+  #      Security Profiles Rules      # 
+  #####################################
+  -->
+  <rule id="130200" level="4">
+    <if_sid>130003</if_sid>
+    <action>blocked</action>
+    <description>Fortigate: UTM Blocked</description>
+  </rule>
+  
+  <rule id="130201" level="4">
+    <if_sid>130003</if_sid>
+    <action>block</action>
+    <description>Fortigate: UTM Blocked</description>
+  </rule>
+  
+  <rule id="130202" level="4">
+    <if_sid>130200,130201</if_sid>
+    <field name="kind">webfilter</field>
+    <description>Fortigate: WebFilter url $(action) - $(eventtype)</description>
+  </rule>
+  
+  <rule id="130203" level="4">
+    <if_sid>130200,130201</if_sid>
+    <field name="kind">app-ctrl</field>
+    <description>Fortigate: Application Control app $(action) - $(eventtype)</description>
+  </rule>
+  
+  <rule id="130204" level="6">
+    <if_sid>130003</if_sid>
+    <field name="kind">virus</field>
+    <description>Fortigate: Virus $(action) - $(eventtype)</description>
+  </rule>
+  
+  <rule id="130205" level="6">
+    <if_sid>130003</if_sid>
+    <field name="kind">ips</field>
+    <description>Fortigate: Intrusion Prevention $(action) - $(eventtype)</description>
+  </rule>
+  
+  <rule id="130206" level="6">
+    <if_sid>130003</if_sid>
+    <field name="kind">anomaly</field>
+    <description>Fortigate: Anomaly intrusion attempts $(action) - $(eventtype)</description>
+  </rule>
+  
+  <rule id="130207" level="6">
+    <if_sid>130003</if_sid>
+    <field name="kind">waf</field>
+    <description>Fortigate: WAF $(action) - $(eventtype)</description>
+  </rule>
+  
+  <!-- 
+  ##########################
+  #      Attack Rules      # 
+  ##########################
+  -->
+  <!-- Possible port scanning -->
+  <rule id="130300" level="7" frequency="1000" timeframe="60">
+    <if_matched_group>suspicioustraffic,</if_matched_group>
+    <same_srcip />
+    <same_dstip />
+    <different_dstport  />
+    <description>Fortigate: Possible port scanning</description>
+    <mitre>
+      <id>T1046</id> <!-- Scanning de portas de rede -->
+    </mitre>
+  </rule> 
+
+  <!-- Possible DoS -->
+  <rule id="130301" level="8" frequency="2500" timeframe="15">
+    <if_matched_group>suspicioustraffic,</if_matched_group>
+    <same_srcip />
+    <description>Fortigate: Possible DoS</description>
+    <mitre>
+      <id>T1499</id> <!-- Denial of Service -->
+    </mitre>
+  </rule> 
+  
+  <!-- DoS Policy Attack -->
+  <rule id="130302" level="8">
+    <if_sid>130003</if_sid>
+    <field name="policytype">DoS-policy</field>
+    <description>Fortigate: UTM - Attack $(attack) detected</description>
+    <mitre>
+      <id>T1499</id> <!-- Denial of Service em política DoS -->
+    </mitre>
+  </rule> 
+  
+  <!-- White List -->
+  <rule id="130999" level="0">
+     <if_group>fwfortigate,</if_group>
+     <list field="srcip" lookup="address_match_key">etc/lists/white-list-ipv4</list>
+     <description>Ignore IP address in whitelist</description>
+  </rule>
+</group>
